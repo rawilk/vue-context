@@ -1,0 +1,20 @@
+{
+  "name": "vue-context",
+  "version": "1.0.0",
+  "description": "A simple vue context menu.",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "context",
+    "menu",
+    "vue2"
+  ],
+  "author": "Randall Wilk <randall@randallwilk.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.4.2"
+  }
+}
