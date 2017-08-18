@@ -1,6 +1,7 @@
 # vue-context
 
-[![npm version](https://badge.fury.io/js/vue-context.svg)](https://www.npmjs.org/package/vue-context)
+[![npm](https://img.shields.io/npm/v/vue-context.svg)](https://www.npmjs.org/package/vue-context)
+[![npm](https://img.shields.io/npm/dt/vue-context.svg)](https://www.npmjs.org/package/vue-context)
 
 A simple yet flexible context menu component for Vue. It is styled for the standard `ul` tag, but any menu template can be used.
 The only dependency this package has is Vue, so the majority of styling is up to you, and any package styles for the menu
