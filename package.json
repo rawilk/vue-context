@@ -1,10 +1,14 @@
 {
   "name": "vue-context",
   "version": "1.0.0",
-  "description": "A simple vue context menu.",
+  "description": "A simple vue context menu component.",
   "main": "index.vue",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development webpack --progress",
+    "watch": "npm run development -- --watch",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production webpack --progress"
   },
   "keywords": [
     "vue",
@@ -16,5 +20,20 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.5"
   }
 }

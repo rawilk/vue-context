@@ -8,7 +8,7 @@
 		@click="close"
 		@contextmenu.capture.prevent
 	>
-		<slot :user-data="userData"></slot>
+		<slot :userData="userData"></slot>
 	</div>
 </template>
 
@@ -18,10 +18,10 @@
     export default {
         data() {
 	        return {
-	        	show: false,
 		        top: null,
 		        left: null,
-		        userData: null
+		        userData: null,
+		        show: false
 	        };
         },
 	    computed: {
@@ -39,10 +39,10 @@
 		     * Close the menu.
 		     */
 		    close() {
-		    	this.show = false;
 		    	this.top = null;
 		    	this.left = null;
 		    	this.userData = null;
+		    	this.show = false;
 		    },
 
 		    /**
@@ -55,12 +55,13 @@
 		    	this.userData = userData;
 
 		    	let top = event.clientY,
-				    left = event.pageX;
+				    left = event.clientX;
+
+		    	this.show = true;
 
 		    	Vue.nextTick(() => {
-		    		this.$el.focus();
-		    		this.setMenu(top, left);
-		    		this.show = true;
+				    this.setMenu(top, left);
+				    this.$el.focus();
 			    });
 		    },
 
@@ -88,3 +89,48 @@
 	    }
     }
 </script>
+
+<style lang="scss" scoped>
+	$blue600: #1e88e5;
+	$gray74: #bdbdbd;
+	$gray93: #ededed;
+	$gray98: #fafafa;
+
+	.v-context {
+		background: $gray98;
+		border: 1px solid $gray74;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		display: block;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		width: 250px;
+		z-index: 99999;
+
+		& ul {
+			list-style: none;
+			padding-left: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin: 0;
+			font-size: 12px;
+			font-weight: 600;
+
+			& li {
+				margin: 0;
+				border-bottom: $gray93;
+				padding: 10px 35px;
+				cursor: pointer;
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				&:hover {
+					background: $blue600;
+					color: $gray98;
+				}
+			}
+		}
+	}
+</style>
