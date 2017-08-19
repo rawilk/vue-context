@@ -1,11 +1,11 @@
 {
   "name": "vue-context",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple vue context menu component.",
   "main": "index.vue",
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/rawilk/vue-context"
+    "type": "git",
+    "url": "https://github.com/rawilk/vue-context"
   },
   "scripts": {
     "dev": "npm run development",
@@ -41,8 +41,8 @@
     "webpack": "^3.5.5"
   },
   "files": [
-     "index.vue",
-     "package.json",
-     "README.md"
+    "index.vue",
+    "package.json",
+    "README.md"
   ]
 }
