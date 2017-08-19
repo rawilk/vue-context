@@ -118,13 +118,8 @@
 
 			& li {
 				margin: 0;
-				border-bottom: $gray93;
 				padding: 10px 35px;
 				cursor: pointer;
-
-				&:last-child {
-					border-bottom: none;
-				}
 
 				&:hover {
 					background: $blue600;

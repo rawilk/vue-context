@@ -127,3 +127,7 @@ new Vue({
 vue-context is inspired from [vue-lil-context-menu](https://github.com/timwis/vue-lil-context-menu) 
 and [Vue.JS Right Click Menu](http://vuejsexamples.com/vue-js-right-click-menu/). Ultimately vue-context is intended
 to provide a simple and lightweight context menu for Vue.
+
+## License
+
+MIT
