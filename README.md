@@ -85,7 +85,7 @@ is sent to the `onClick` method on the Vue instance, which is then shown in an a
 
 To pass any data from the `contextmenu` event to your template, you can pass it as the second
 parameter of `open` and access it within a [scoped slot](https://vuejs.org/v2/guide/components.html#Scoped-Slots) 
-under the `data` property`. `$event` must be passed as the first parameter,
+under the `data` property. `$event` must be passed as the first parameter,
 otherwise the context menu will not function properly.
 
 ```html
