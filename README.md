@@ -8,7 +8,7 @@ but any menu template can be used. The only dependency this package has is Vue,
 so the majority of styling is up to you, and any package styles for the menu
 can easily be overridden.
 
-The menu disappears when you expect by using the `onblur` even and it also
+The menu disappears when you expect by using the `onblur` event and it also
 disappears when clicked on.
 
 ## Note
