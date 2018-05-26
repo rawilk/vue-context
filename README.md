@@ -11,6 +11,10 @@ can easily be overridden.
 The menu disappears when you expect by using the `onblur` even and it also
 disappears when clicked on.
 
+## Note
+The API has changed. Check [v2.0.1 documentation](https://github.com/rawilk/vue-context/blob/master/docs/2.0.1.md) 
+if you use the old version.
+
 ## Getting Started
 
 The following instructions will help you get the vue-context menu up and running on
@@ -107,7 +111,7 @@ can also be used to output dynamic content to the context menu.
 
 ```js
 import Vue from 'vue';
-import { VueContext} from 'vue-context';
+import { VueContext } from 'vue-context';
 
 new Vue({
     components: {
