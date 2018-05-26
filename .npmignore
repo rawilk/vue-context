@@ -1,0 +1,6 @@
+docs/
+src/
+test/
+build/
+.idea
+**/mix-manifest.json

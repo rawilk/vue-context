@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue Context Test Page</title>
+	</head>
+	<body>
+		<div id="app">
+			<p @contextmenu.prevent="$refs.menu.open($event, { foo: 'bar' })">
+				Right click on me
+			</p>
+
+			<vue-context ref="menu">
+				<ul slot-scope="child">
+					<li @click="onClick(child.data)">Option 1 {{ child.data && child.data.foo }}</li>
+					<li>Option 2</li>
+				</ul>
+			</vue-context>
+		</div>
+
+		<script src="js/dist/index.js"></script>
+	</body>
+</html>
