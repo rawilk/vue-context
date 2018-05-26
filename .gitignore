@@ -1,0 +1,6 @@
+package-lock.json
+node_modules/
+.idea
+npm-debug.log*
+test/
+**/mix-manifest.json

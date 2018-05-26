@@ -2,47 +2,36 @@
   "name": "vue-context",
   "version": "2.0.1",
   "description": "A simple vue context menu component.",
-  "main": "index.vue",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rawilk/vue-context"
-  },
+  "main": "index.js",
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development webpack --progress",
-    "watch": "npm run development -- --watch",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production webpack --progress"
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev-test": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack-test.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-test": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack-test.mix.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [
     "vue",
     "context",
-    "menu",
+    "context menu",
     "vue2"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawilk/vue-context.git"
+  },
   "author": "Randall Wilk <randall@randallwilk.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rawilk/vue-context/issues"
+  },
+  "homepage": "https://github.com/rawilk/vue-context#readme",
   "dependencies": {
-    "vue": "^2.4.2"
+    "vue": "^2.5.16"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-es2015": "^6.24.1",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.5",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "vue-loader": "^13.0.4",
-    "vue-template-compiler": "^2.4.2",
-    "webpack": "^3.5.5"
-  },
-  "files": [
-    "index.vue",
-    "package.json",
-    "README.md"
-  ]
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.6",
+    "laravel-mix": "^2.1.11",
+    "node-sass": "^4.9.0"
+  }
 }

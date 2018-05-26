@@ -6,4 +6,4 @@
 - Created changelog file
 
 ### 2.0.0 (Aug 17, 2017)
-- Initial Release
+- Initial Re-Release
