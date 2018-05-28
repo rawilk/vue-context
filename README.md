@@ -2,6 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/vue-context.svg)](https://www.npmjs.org/package/vue-context)
 [![npm](https://img.shields.io/npm/dt/vue-context.svg)](https://www.npmjs.org/package/vue-context)
+<a href="https://vuejs.org">
+    <img alt="" src="https://img.shields.io/badge/vue.js-2.x-green.svg?style=flat-square">
+</a>
 
 A simple yet flexible context menu for Vue. It is styled for the standard `ul` tag,
 but any menu template can be used. The only dependency this package has is Vue,
@@ -10,6 +13,12 @@ can easily be overridden.
 
 The menu disappears when you expect by using the `onblur` event and it also
 disappears when clicked on.
+
+![Screenshot](screenshot.png)
+
+## Demo
+
+[Demo site](https://rawilk.github.io/vue-context)
 
 ## Note
 The API has changed. Check [v2.0.1 documentation](https://github.com/rawilk/vue-context/blob/master/docs/2.0.1.md) 
