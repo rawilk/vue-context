@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.2 (May 28, 2018)
+- Update documentation
+- Add [demos](https://rawilk.github.io/vue-context) for the component
+
 ### 3.0.0 (May 26, 2018)
 - Update dependencies
 - Update documentation
