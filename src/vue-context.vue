@@ -13,6 +13,13 @@
 
 <script>
 	export default {
+		props: {
+		    closeOnScroll: {
+		        type: Boolean,
+			    default: true
+		    },
+		},
+
 		computed: {
 			/**
 			 * Generate the CSS styles for positioning the context menu.
@@ -35,7 +42,26 @@
 		    };
 		},
 
+		mounted () {
+		    if (this.closeOnScroll) {
+		    	this.addScrollEventListener();
+		    }
+		},
+
+		beforeDestroy () {
+		    if (this.closeOnScroll) {
+		    	this.removeScrollEventListener();
+		    }
+		},
+
 		methods: {
+			/**
+			 * Add scroll event listener to close context menu.
+			 */
+			addScrollEventListener () {
+			    window.addEventListener('scroll', this.close);
+			},
+
 			/**
 			 * Close the context menu.
 			 */
@@ -82,8 +108,35 @@
 
 			    this.top = top;
 			    this.left = left;
-			}
+			},
+
+			/**
+			 * Remove the scroll event listener to close the context menu.
+			 */
+			removeScrollEventListener () {
+			    window.removeEventListener('scroll', this.close);
+			},
 		},
+
+		watch: {
+			/**
+			 * Add or remove the scroll event listener when the prop value changes.
+			 *
+			 * @param {boolean} value
+			 * @param {boolean} oldValue
+			 */
+		    closeOnScroll (value, oldValue) {
+		        if (value === oldValue) {
+		        	return;
+		        }
+
+		        if (value) {
+		        	this.addScrollEventListener();
+		        } else {
+		        	this.removeScrollEventListener();
+		        }
+		    }
+		}
 	};
 </script>
 
