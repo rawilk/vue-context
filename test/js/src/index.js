@@ -6,6 +6,10 @@ new Vue({
 		VueContext
 	},
 
+	data: {
+		close: true
+	},
+
 	methods: {
 		onClick (data) {
 			console.log(data);
