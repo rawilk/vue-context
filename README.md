@@ -144,6 +144,12 @@ new Vue({
 }).$mount('#app');
 ```
 
+## Props
+
+| Property | Type | Default | Description
+| -------- | ---- | ------- | -----------
+| `closeOnScroll` | Boolean | `true` | If set to true, context menu will automatically close on window scroll.
+
 ## Credits
 
 vue-context is inspired from [vue-lil-context-menu](https://github.com/timwis/vue-lil-context-menu)
