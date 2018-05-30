@@ -1,11 +1,11 @@
 <template>
 	<div class="v-context"
-		 v-show="show"
-		 :style="style"
-		 tabindex="-1"
-		 @blur="close"
-		 @click="close"
-		 @contextmenu.capture.prevent
+	     v-show="show"
+	     :style="style"
+	     tabindex="-1"
+	     @blur="close"
+	     @click="close"
+	     @contextmenu.capture.prevent
 	>
 		<slot :data="data"></slot>
 	</div>
@@ -14,10 +14,10 @@
 <script>
 	export default {
 		props: {
-		    closeOnScroll: {
-		        type: Boolean,
-			    default: true
-		    },
+			closeOnScroll: {
+				type: Boolean,
+				default: true
+			},
 		},
 
 		computed: {
@@ -26,32 +26,32 @@
 			 *
 			 * @returns {object|null}
 			 */
-		    style () {
-		        return this.show
-			        ? { top: `${this.top}px`, left: `${this.left}px` }
-			        : null;
-		    },
+			style () {
+				return this.show
+					? { top: `${this.top}px`, left: `${this.left}px` }
+					: null;
+			},
 		},
 
 		data () {
-		    return {
-		        top: null,
-			    left: null,
-			    show: false,
-			    data: null
-		    };
+			return {
+				top: null,
+				left: null,
+				show: false,
+				data: null
+			};
 		},
 
 		mounted () {
-		    if (this.closeOnScroll) {
-		    	this.addScrollEventListener();
-		    }
+			if (this.closeOnScroll) {
+				this.addScrollEventListener();
+			}
 		},
 
 		beforeDestroy () {
-		    if (this.closeOnScroll) {
-		    	this.removeScrollEventListener();
-		    }
+			if (this.closeOnScroll) {
+				this.removeScrollEventListener();
+			}
 		},
 
 		methods: {
@@ -59,18 +59,18 @@
 			 * Add scroll event listener to close context menu.
 			 */
 			addScrollEventListener () {
-			    window.addEventListener('scroll', this.close);
+				window.addEventListener('scroll', this.close);
 			},
 
 			/**
 			 * Close the context menu.
 			 */
-		    close () {
-		        this.top = null;
-		        this.left = null;
-		        this.data = null;
-		        this.show = false;
-		    },
+			close () {
+				this.top = null;
+				this.left = null;
+				this.data = null;
+				this.show = false;
+			},
 
 			/**
 			 * Open the context menu.
@@ -95,27 +95,27 @@
 			 * @param {number} left
 			 */
 			positionMenu (top, left) {
-			    const largestHeight = window.innerHeight - this.$el.offsetHeight - 25;
-			    const largestWidth = window.innerWidth - this.$el.offsetWidth - 25;
+				const largestHeight = window.innerHeight - this.$el.offsetHeight - 25;
+				const largestWidth = window.innerWidth - this.$el.offsetWidth - 25;
 
-			    if (top > largestHeight) {
-			    	top = largestHeight;
-			    }
+				if (top > largestHeight) {
+					top = largestHeight;
+				}
 
-			    if (left > largestWidth) {
-			    	left = largestWidth;
-			    }
+				if (left > largestWidth) {
+					left = largestWidth;
+				}
 
-			    this.top = top;
-			    this.left = left;
+				this.top = top;
+				this.left = left;
 			},
 
 			/**
 			 * Remove the scroll event listener to close the context menu.
 			 */
 			removeScrollEventListener () {
-			    window.removeEventListener('scroll', this.close);
-			},
+				window.removeEventListener('scroll', this.close);
+			}
 		},
 
 		watch: {
@@ -125,17 +125,17 @@
 			 * @param {boolean} value
 			 * @param {boolean} oldValue
 			 */
-		    closeOnScroll (value, oldValue) {
-		        if (value === oldValue) {
-		        	return;
-		        }
+			closeOnScroll (value, oldValue) {
+				if (value === oldValue) {
+					return;
+				}
 
-		        if (value) {
-		        	this.addScrollEventListener();
-		        } else {
-		        	this.removeScrollEventListener();
-		        }
-		    }
+				if (value) {
+					this.addScrollEventListener();
+				} else {
+					this.removeScrollEventListener();
+				}
+			}
 		}
 	};
 </script>
