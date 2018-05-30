@@ -4,3 +4,6 @@ test/
 build/
 .idea
 **/mix-manifest.json
+.github/
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
