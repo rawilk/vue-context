@@ -47,18 +47,18 @@ import { VueContext } from 'vue-context';
 
 new Vue({
     components: {
-    	VueContext
+        VueContext
     },
     
     methods: {
-    	/**
-    	* Alert the text of the menu item that was clicked on.
-    	* 
-        * @param {string} text
-        */
-    	onClick (text) {
+        /**
+         * Alert the text of the menu item that was clicked on.
+         * 
+         * @param {string} text
+         */
+        onClick (text) {
             alert(`You clicked ${text}!`);
-    	}
+        }
     }
 }).$mount('#app');
 ```
@@ -124,22 +124,22 @@ import { VueContext } from 'vue-context';
 
 new Vue({
     components: {
-    	VueContext
+        VueContext
     },
     
     methods: {
-    	/**
-    	* Alert the text of the menu item that was clicked on.
-    	* Console log the data sent from the menu.
-    	* 
-        * @param {string} text
-        * @param {object} data
-        */
-    	onClick (text, data) {
+        /**
+         * Alert the text of the menu item that was clicked on.
+         * Console log the data sent from the menu.
+         * 
+         * @param {string} text
+         * @param {object} data
+         */
+        onClick (text, data) {
             alert(`You clicked ${text}!`);
             console.log(data);
             // => { foo: 'bar' }
-    	}
+        }
     }
 }).$mount('#app');
 ```

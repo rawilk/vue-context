@@ -2,17 +2,17 @@ import Vue from 'vue';
 import { VueContext } from '../../../dist/vue-context';
 
 new Vue({
-	components: {
-		VueContext
-	},
+    components: {
+        VueContext
+    },
 
-	data: {
-		close: true
-	},
+    data: {
+        close: true
+    },
 
-	methods: {
-		onClick (data) {
-			console.log(data);
-		},
-	},
+    methods: {
+        onClick (data) {
+            console.log(data);
+        },
+    },
 }).$mount('#app');
