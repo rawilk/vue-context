@@ -18,7 +18,7 @@ disappears when clicked on.
 
 ## Demo
 
-[Demo site](https://rawilk.github.io/vue-context)
+A demo of `vue-context` can be found here: https://rawilk.github.io/vue-context
 
 ## Note
 The API has changed. Check [v2.0.1 documentation](https://github.com/rawilk/vue-context/blob/master/docs/2.0.1.md) 
@@ -158,4 +158,4 @@ vue-context is intended to provide a simple and lightweight context menu for Vue
 
 ## License
 
-MIT
+The MIT License (MIT). Please see the [License file](https://github.com/rawilk/vue-context/blog/master/LICENSE) for more information.
