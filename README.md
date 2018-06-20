@@ -158,4 +158,4 @@ vue-context is intended to provide a simple and lightweight context menu for Vue
 
 ## License
 
-The MIT License (MIT). Please see the [License file](https://github.com/rawilk/vue-context/blog/master/LICENSE) for more information.
+The MIT License (MIT). Please see the [License file](https://github.com/rawilk/vue-context/blob/master/LICENSE) for more information.
