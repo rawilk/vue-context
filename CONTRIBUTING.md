@@ -5,7 +5,7 @@
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Vue Context Code of Conduct](CODE_OF_CONDUCT.md). By participating,
-you are expected to uphold this code. Please report unnaceptable behavior to [wilk.randall@gmail.com](mailto:wilk.randall@gmail.com).
+you are expected to uphold this code. Please report unacceptable behavior to [wilk.randall@gmail.com](mailto:wilk.randall@gmail.com).
 
 ## How Can I Contribute?
 
@@ -14,7 +14,7 @@ you are expected to uphold this code. Please report unnaceptable behavior to [wi
 - **Ensure the bug was not already reported** by searching Github under [Issues](https://github.com/rawilk/vue-context/issues).
 - If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/rawilk/vue-context/issues/new). Be
 sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case**
-demonstrating the expected behavior that is not occuring.
+demonstrating the expected behavior that is not occurring.
 - Links to [CodePen](https://codepen.io), [JS Bin](https://jsbin.com), or [JsFiddle](https://jsfiddle.net) are also appreciated.
 - If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 
@@ -33,7 +33,7 @@ This section guides you through submitting an enhancement suggestion for Vue Con
 to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related
 suggestions :mag_right:.
 
-Before creating enhancement sugestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find 
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find 
 out that you don't need to create one. When creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion).
 Fill in [the template](https://github.com/rawilk/vue-context/blob/master/.github/ISSUE_TEMPLATE.md), including the steps that you might imagine
 you would take if the feature you're requesting existed.
