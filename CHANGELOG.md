@@ -3,7 +3,7 @@
 ## 3.1.0 (May 29, 2018)
 
 ### Added
-- Close context menu automatically on window scroll (issue #2)
+- Close context menu automatically on window scroll ([issue #2](https://github.com/rawilk/vue-context/issues/2))
 
 ## 3.0.2 (May 28, 2018)
 
