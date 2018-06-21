@@ -1,10 +1,10 @@
 # vue-context
 
-[![npm](https://img.shields.io/npm/v/vue-context.svg)](https://www.npmjs.org/package/vue-context)
-[![npm](https://img.shields.io/npm/dt/vue-context.svg)](https://www.npmjs.org/package/vue-context)
-<a href="https://vuejs.org">
-    <img alt="" src="https://img.shields.io/badge/vue.js-2.x-green.svg?style=flat-square">
-</a>
+[![npm](https://img.shields.io/npm/v/vue-context.svg?style=for-the-badge)](https://img.shields.io/npm/v/vue-context)
+[![npm downloads](https://img.shields.io/npm/dt/vue-context.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-context)
+[![GitHub issues](https://img.shields.io/github/issues/rawilk/vue-context.svg?style=for-the-badge)](https://github.com/rawilk/vue-context/issues)
+[![GitHub stars](https://img.shields.io/github/stars/rawilk/vue-context.svg?style=for-the-badge)](https://github.com/rawilk/vue-context/stargazers)
+[![VueJS version](https://img.shields.io/badge/vue.js-2.x-green.svg?style=for-the-badge)](https://vuejs.org)
 
 A simple yet flexible context menu for Vue. It is styled for the standard `ul` tag,
 but any menu template can be used. The only dependency this package has is Vue,
