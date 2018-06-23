@@ -17,7 +17,7 @@
             closeOnScroll: {
                 type: Boolean,
                 default: true
-            },
+            }
         },
 
         computed: {
@@ -75,8 +75,8 @@
             /**
              * Open the context menu.
              *
-             * @param {Event} event
-             * @param {object} data
+             * @param {MouseEvent} event
+             * @param {array|object|string} data User provided data for the menu
              */
             open (event, data) {
                 this.data = data;

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.1 (June 23, 2018)
+
+### Updated
+- README.md
+- Code comments
+
 ## 3.1.0 (May 29, 2018)
 
 ### Added
