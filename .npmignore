@@ -7,3 +7,4 @@ build/
 .github/
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+.editorconfig
