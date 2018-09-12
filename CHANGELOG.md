@@ -1,5 +1,10 @@
 # Changelog
 
+# 3.2.0 (Sep 12, 2018)
+
+### Added
+- Prop to tell context menu not to close automatically on click ([issue #8](https://github.com/rawilk/vue-context/issues/8))
+
 ## 3.1.1 (June 23, 2018)
 
 ### Updated
