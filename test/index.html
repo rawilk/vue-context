@@ -10,7 +10,7 @@
                 Right click on me
             </p>
 
-            <vue-context ref="menu" :close-on-scroll="close">
+            <vue-context ref="menu" :close-on-scroll="close" :close-on-click="false">
                 <ul slot-scope="child">
                     <li @click="onClick(child.data)">Option 1 {{ child.data && child.data.foo }}</li>
                     <li>Option 2</li>
