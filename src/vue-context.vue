@@ -4,7 +4,7 @@
          :style="style"
          tabindex="-1"
          @blur="close"
-         @click="close"
+         @click="onClick"
          @contextmenu.capture.prevent
     >
         <slot :data="data"></slot>
@@ -14,6 +14,21 @@
 <script>
     export default {
         props: {
+        	/**
+	         * Close the menu on click.
+	         *
+	         * @type {boolean}
+	         */
+        	closeOnClick: {
+        	    type: Boolean,
+		        default: true
+	        },
+
+	        /**
+	         * Close the menu automatically on window scroll.
+	         *
+	         * @type {boolean}
+	         */
             closeOnScroll: {
                 type: Boolean,
                 default: true
@@ -71,6 +86,15 @@
                 this.data = null;
                 this.show = false;
             },
+
+	        /**
+	         * Close the menu if `closeOnScroll` is set to true.
+	         */
+	        onClick () {
+	            if (this.closeOnScroll) {
+	            	this.close();
+	            }
+	        },
 
             /**
              * Open the context menu.
