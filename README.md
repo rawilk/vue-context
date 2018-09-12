@@ -148,6 +148,7 @@ new Vue({
 
 | Property | Type | Default | Description
 | -------- | ---- | ------- | -----------
+| `closeOnClick` | Boolean | `true` | If set to false, context menu will not automatically close when clicked on.
 | `closeOnScroll` | Boolean | `true` | If set to true, context menu will automatically close on window scroll.
 
 ## Credits
