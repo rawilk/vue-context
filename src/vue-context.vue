@@ -77,21 +77,21 @@
 				window.addEventListener('scroll', this.close);
 			},
 
-			/**
-			 * Close the context menu.
+            /**
+             * Close the context menu.
              *
              * @param {boolean|Event} emit Used to prevent event being emitted twice from when menu is clicked and closed
-			 */
-			close (emit = true) {
-				this.top = null;
-				this.left = null;
-				this.data = null;
-				this.show = false;
+             */
+            close (emit = true) {
+                this.top = null;
+                this.left = null;
+                this.data = null;
+                this.show = false;
 
-				if (emit) {
+                if (emit) {
                     this.$emit('close');
                 }
-			},
+            },
 
 			/**
 			 * Close the menu if `closeOnClick` is set to true.
