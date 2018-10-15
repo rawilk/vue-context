@@ -45,7 +45,7 @@
 				return this.show
 					? { top: `${this.top}px`, left: `${this.left}px` }
 					: null;
-			},
+			}
 		},
 
 		data () {
@@ -79,12 +79,18 @@
 
 			/**
 			 * Close the context menu.
+             *
+             * @param {boolean|Event} emit Used to prevent event being emitted twice from when menu is clicked and closed
 			 */
-			close () {
+			close (emit = true) {
 				this.top = null;
 				this.left = null;
 				this.data = null;
 				this.show = false;
+
+				if (emit) {
+                    this.$emit('close');
+                }
 			},
 
 			/**
@@ -92,7 +98,7 @@
 			 */
 			onClick () {
 				if (this.closeOnClick) {
-					this.close();
+					this.close(false);
 				}
 			},
 
@@ -109,6 +115,8 @@
 				this.$nextTick(() => {
 					this.positionMenu(event.clientY, event.clientX);
 					this.$el.focus();
+
+                    this.$emit('open', event, this.data, this.top, this.left);
 				});
 			},
 
