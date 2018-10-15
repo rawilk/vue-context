@@ -146,10 +146,17 @@ new Vue({
 
 ## Props
 
-| Property | Type | Default | Description
-| -------- | ---- | ------- | -----------
-| `closeOnClick` | Boolean | `true` | If set to false, context menu will not automatically close when clicked on.
-| `closeOnScroll` | Boolean | `true` | If set to true, context menu will automatically close on window scroll.
+| Property | Type | Default | Description |
+| --- | --- | --- | --- |
+| `closeOnClick` | Boolean | `true` | If set to false, context menu will not automatically close when clicked on. |
+| `closeOnScroll` | Boolean | `true` | If set to true, context menu will automatically close on window scroll. |
+
+## Events
+
+| Event | Params | Description |
+| --- | --- | --- |
+| close | none | Emits when the context menu is closed |
+| open | `event`, `data`, `top`, `left` | Emits when the menu is opened. The event, context menu data, top and left position are all sent through as parameters as well. |
 
 ## Credits
 

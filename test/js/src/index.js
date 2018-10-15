@@ -12,7 +12,15 @@ new Vue({
 
     methods: {
         onClick (data) {
-            console.log(data);
+            // console.log(data);
         },
+
+        onClose () {
+            console.log('closing');
+        },
+
+        onOpen (event, data, top, left) {
+            console.log(data, top, left);
+        }
     },
 }).$mount('#app');
