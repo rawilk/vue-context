@@ -3,7 +3,7 @@
 	     v-show="show"
 	     :style="style"
 	     tabindex="-1"
-	     @blur="close"
+	     v-on-clickaway="close"
 	     @click="onClick"
 	     @contextmenu.capture.prevent
 	>
@@ -12,7 +12,11 @@
 </template>
 
 <script>
+    import { mixin as clickaway } from 'vue-clickaway';
+
 	export default {
+	    mixins: [clickaway],
+
 		props: {
 			/**
 			 * Close the menu on click.
