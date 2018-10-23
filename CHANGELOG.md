@@ -1,5 +1,15 @@
 # Changelog
 
+# 3.3.1 (Oct 23, 2018)
+
+## Changed
+- Context menu now closes via [clickaway](https://github.com/simplesmiler/vue-clickaway)
+instead of blur event. Credit to [robjbrain](https://github.com/robjbrain)
+for pointing it out.
+
+## Updated
+- Updated vue and other dev dependencies.
+
 # 3.3.0 (Oct 15, 2018)
 
 ## Added
