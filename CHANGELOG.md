@@ -1,5 +1,10 @@
 # Changelog
 
+# 3.3.2 (Nov 19, 2018)
+
+# Fixed
+- Only emit close event if menu is actually open - [#13](https://github.com/rawilk/vue-context/issues/13)
+
 # 3.3.1 (Oct 23, 2018)
 
 ### Changed
