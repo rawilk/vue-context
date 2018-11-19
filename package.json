@@ -1,6 +1,6 @@
 {
   "name": "vue-context",
-  "version": "3.3.1",
+  "version": "3.4.0",
   "description": "A simple vue context menu component.",
   "main": "dist/vue-context.js",
   "scripts": {
