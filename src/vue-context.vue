@@ -87,6 +87,10 @@
              * @param {boolean|Event} emit Used to prevent event being emitted twice from when menu is clicked and closed
              */
             close (emit = true) {
+                if (! this.show) {
+                    return;
+                }
+
                 this.top = null;
                 this.left = null;
                 this.data = null;
