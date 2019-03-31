@@ -144,6 +144,12 @@ new Vue({
 }).$mount('#app');
 ```
 
+## Left Click Support
+
+If you want to use a `left` click to open the menu instead, just replace `@contextmenu.prevent`
+with `@click.prevent`. If you have issues with the menu closing right after you click on your target
+element, you just need to append the `stop` modifier onto the click event. See [issue #14](https://github.com/rawilk/vue-context/issues/14) for more information.
+
 ## Props
 
 | Property | Type | Default | Description |
