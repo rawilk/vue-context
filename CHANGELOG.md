@@ -1,70 +1,101 @@
 # Changelog
 
-# 3.4.0 (Nov 19, 2018)
+All notable changes to this project will be documented here.
 
-### Fixed
-- Only emit close event if menu is actually open - [#13](https://github.com/rawilk/vue-context/issues/13)
+<a name="3.4.0"></a>
+## [3.4.0](https://github.com/rawilk/vue-context/releases/tag/3.4.0)
 
-# 3.3.1 (Oct 23, 2018)
+Released 2018-11-19
 
-### Changed
-- Context menu now closes via [clickaway](https://github.com/simplesmiler/vue-clickaway)
-instead of blur event. Credit to [robjbrain](https://github.com/robjbrain)
-for pointing it out.
+### Bug fixes 3.4.0
+- **Close event:** only emit the event if menu is actually open (fixes [#13](https://github.com/rawilk/vue-context/issues/13))
 
-### Updated
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/rawilk/vue-context/releases/tag/3.3.1)
+
+Released 2018-10-23
+
+### Changes 3.3.1
+- Context menu now closes via [clickaway](https://github.com/simplesmiler/vue-clickaway) instead of a blur event. Credit: [robjbrain](https://github.com/robjbrain)
+
+### Updates 3.3.1
 - Updated vue and other dev dependencies.
 
-# 3.3.0 (Oct 15, 2018)
+<a name="3.3.0"></a>
+## [3.3.0](https://github.com/rawilk/vue-context/releases/tag/3.3.0)
 
-### Added
-- Context menu now emits events when opened and closed ([issue #10](https://github.com/rawilk/vue-context/issues/10))
+Released 2018-10-15
 
-# 3.2.0 (Sep 12, 2018)
+### Features 3.3.0
+- **Events:** both open and close events are now emitted by the component. ([#10](https://github.com/rawilk/vue-context/issues/10))
 
-### Added
-- Prop to tell context menu not to close automatically on click ([issue #8](https://github.com/rawilk/vue-context/issues/8))
+<a name="3.2.0"></a>
+## [3.2.0](https://github.com/rawilk/vue-context/releases/tag/3.2.0)
 
-## 3.1.1 (June 23, 2018)
+Released 2018-09-12
 
-### Updated
-- README.md
-- Code comments
+### Features 3.2.0
+- **Close on click prop:** added a prop to prevent closing the context menu on click. ([#8](https://github.com/rawilk/vue-context/issues/8))
 
-## 3.1.0 (May 29, 2018)
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/rawilk/vue-context/releases/tag/3.1.1)
 
-### Added
-- Close context menu automatically on window scroll ([issue #2](https://github.com/rawilk/vue-context/issues/2))
+Released 2018-06-23
 
-## 3.0.2 (May 28, 2018)
+### Updates 3.1.1
+- Updated README.md
+- Added code comments
 
-### Updated
-- Documentation
+<a name="3.1.0"></a>
+## [3.1.0](https://github.com/rawilk/vue-context/releases/tag/3.1.0)
 
-### Added
-- Add [demos](https://rawilk.github.io/vue-context) for the component
+Released 2018-05-29
 
-## 3.0.0 (May 26, 2018)
+### Features 3.1.0
+- **Scroll prop:** added a prop to close the context menu automatically on window scroll. ([#2](https://github.com/rawilk/vue-context/issues/2))
 
-### Breaking Changes
-- Change slot scope definition from `userData` to just `data`
-- Component gets imported as `{ VueContext }` instead of `VContext` now
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/rawilk/vue-context/releases/tag/3.0.2)
 
-### Updated
-- Dependencies
-- Documentation
+Released 2018-05-29
 
-### Changed
-- Code structure and build process
+### Updates 3.0.2
+- Updated documentation
 
-## 2.0.1 (Aug 18, 2017)
+### Added 3.0.2
+- Added [demos](https://vue-context.randallwilk.com) for the component.
 
-### Added
+<a name="3.0.0"></a>
+## [3.0.0](https://github.com/rawilk/vue-context/releases/tag/3.0.0)
+
+Released 2018-05-26
+
+### Breaking changes 3.0.0
+- Changed slot scope definition from `userData` to just `data`.
+- Component gets imported as `{ VueContext }` instead of `VContext` now.
+
+### Updates 3.0.0
+- Updated dependencies
+- Updated documentation
+
+### Changes 3.0.0
+- Changed code structure and build process.
+
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/rawilk/vue-context/releases/tag/2.0.1)
+
+Released 2017-08-18
+
+### Added 2.0.1
 - License file
 - Changelog file
 
-### Removed
-- Bottom border from context menu line items.
+### Removed 2.0.1
+- Removed bottom border from context menu line items.
 
-## 2.0.0 (Aug 17, 2017)
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/rawilk/vue-context/releases/tag/2.0.0)
+
+Released 2017-08-17
+
 - Initial release
