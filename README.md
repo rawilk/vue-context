@@ -15,7 +15,7 @@ The menu disappears when you expect by utilizing `vue-clickaway` and it also opt
 ![Screenshot](screenshot.png)
 
 ## Note
-The API has changed. Check [v2.0.1 documentation](https://github.com/rawilk/vue-context/blob/master/docs/2.0.1.md) 
+The API has changed since the last major release. Check [v2 documentation](https://vue-context.randallwilk.com/docs/2.0/overview) 
 if you use the old version.
 
 ## Getting Started
