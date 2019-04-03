@@ -6,19 +6,13 @@
 [![GitHub stars](https://img.shields.io/github/stars/rawilk/vue-context.svg?style=for-the-badge)](https://github.com/rawilk/vue-context/stargazers)
 [![VueJS version](https://img.shields.io/badge/vue.js-2.x-green.svg?style=for-the-badge)](https://vuejs.org)
 
-A simple yet flexible context menu for Vue. It is styled for the standard `ul` tag,
-but any menu template can be used. The only dependency this package has is Vue,
-so the majority of styling is up to you, and any package styles for the menu
-can easily be overridden.
-
-The menu disappears when you expect by using the `onblur` event and it also
-disappears when clicked on.
+`vue-context` provides a simple yet flexible context menu for Vue. It is styled for the standard `<ul>` tag, but any menu template can be used.
+The only dependencies the menu has are Vue and vue-clickaway, so the majority of styling is up to you, and any of the package
+styles for the menu can easily be overridden.
+<br><br>
+The menu disappears when you expect by utilizing `vue-clickaway` and it also optionally disappears when clicked on.
 
 ![Screenshot](screenshot.png)
-
-## Demo
-
-A demo of `vue-context` can be found here: https://rawilk.github.io/vue-context
 
 ## Note
 The API has changed. Check [v2.0.1 documentation](https://github.com/rawilk/vue-context/blob/master/docs/2.0.1.md) 
@@ -33,13 +27,12 @@ your project.
 
 Using npm:
 ```bash
-$ npm install vue-context --save
+npm i vue-context
 ```
 
 ## Basic Usage
 
-Import the package and use it in your Vue instance, and add a simple method
-for the click event.
+Import the component and use it in your app.
 
 ```js
 import Vue from 'vue';
@@ -51,11 +44,6 @@ new Vue({
     },
     
     methods: {
-        /**
-         * Alert the text of the menu item that was clicked on.
-         * 
-         * @param {string} text
-         */
         onClick (text) {
             alert(`You clicked ${text}!`);
         }
@@ -63,16 +51,15 @@ new Vue({
 }).$mount('#app');
 ```
 
-Add an element to the page that will trigger the context menu to appear,
-and also add the context menu to the page.
+Next add an element to the page that will trigger the context menu to appear, and also add the context menu to the page.
 
 ```html
 <div id="app">
-    
+
     <div>
         <p @contextmenu.prevent="$refs.menu.open">
             Right click on me
-        </p>
+        </p>    
     </div>
     
     <vue-context ref="menu">
@@ -85,91 +72,10 @@ and also add the context menu to the page.
 </div>
 ```
 
-`@contextmenu.prevent` is the event listener needed to open the context menu. It is using
-`.prevent` as a modifier to prevent the default behavior. It has a ref of `menu`, which
-is what `$refs.menu` is referring to. When each item is clicked on, the text of the item
-is sent to the `onClick` method on the Vue instance, which is then shown in an alert.
+## Documentation/Demo
 
-## Advanced Usage
-
-To pass any data from the `contextmenu` event to your template, you can pass it as the second
-parameter of `open` and access it within a [scoped slot](https://vuejs.org/v2/guide/components.html#Scoped-Slots) 
-under the `data` property. `$event` must be passed as the first parameter,
-otherwise the context menu will not function properly.
-
-```html
-<div id="app">
-    
-    <p @contextmenu.prevent="$refs.menu.open($event, { foo: 'bar' })">
-        Right click on me
-    </p>
-    
-    <vue-context ref="menu">
-        <ul slot-scope="child">
-            <li @click="onClick($event.target.innerText, child.data)">Option 1</li>
-            <li @click="onClick($event.target.innerText, child.data)">Option 2</li>
-        </ul>
-    </vue-context>
-    
-</div>
-```
-
-Now the `onClick` method on the Vue instance has access to any user data passed to it,
-which in this case is an object with a property named `foo`. The `data` slot scope
-can also be used to output dynamic content to the context menu.
-
-```js
-import Vue from 'vue';
-import { VueContext } from 'vue-context';
-
-new Vue({
-    components: {
-        VueContext
-    },
-    
-    methods: {
-        /**
-         * Alert the text of the menu item that was clicked on.
-         * Console log the data sent from the menu.
-         * 
-         * @param {string} text
-         * @param {object} data
-         */
-        onClick (text, data) {
-            alert(`You clicked ${text}!`);
-            console.log(data);
-            // => { foo: 'bar' }
-        }
-    }
-}).$mount('#app');
-```
-
-## Left Click Support
-
-If you want to use a `left` click to open the menu instead, just replace `@contextmenu.prevent`
-with `@click.prevent`. If you have issues with the menu closing right after you click on your target
-element, you just need to append the `stop` modifier onto the click event. See [issue #14](https://github.com/rawilk/vue-context/issues/14) for more information.
-
-## Props
-
-| Property | Type | Default | Description |
-| --- | --- | --- | --- |
-| `closeOnClick` | Boolean | `true` | If set to false, context menu will not automatically close when clicked on. |
-| `closeOnScroll` | Boolean | `true` | If set to true, context menu will automatically close on window scroll. |
-
-## Events
-
-| Event | Params | Description |
-| --- | --- | --- |
-| close | none | Emits when the context menu is closed |
-| open | `event`, `data`, `top`, `left` | Emits when the menu is opened. The event, context menu data, top and left position are all sent through as parameters as well. |
-
-## Credits
-
-vue-context is inspired from [vue-lil-context-menu](https://github.com/timwis/vue-lil-context-menu)
-and [Vue.JS Right Click Menu](http://vuejsexamples.com/vue-js-right-click-menu/). Ultimately
-vue-context is intended to provide a simple and lightweight context menu for Vue.
+For full documentation and demos, go here: https://vue-context.randallwilk.com/docs
 
 ## License
 
-The MIT License (MIT). Please see the [License file](https://github.com/rawilk/vue-context/blob/master/LICENSE) for more information.
+`vue-context` uses the MIT License (MIT). Please see the [license file](https://github.com/rawilk/vue-context/blob/master/LICENSE) for more information.
