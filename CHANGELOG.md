@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented here.
 
+<a name="3.4.1"></a>
+## [3.4.1](https://github.com/rawilk/vue-context/releases/tag/3.4.1)
+
+Released 2019-04-03
+
+### Updates 3.4.1
+- **Scroll Listener:** Only attach the close scroll event listener when opened and immediately remove it when menu is closed
+to prevent it being called unnecessarily. 
+- **Dependencies:** Removed Vue as a dependency as it never really was one since v3.0.0.
+- **Dependencies:** Ran `npm audit fix` to fix vulnerabilities found from dependencies.
+
 <a name="3.4.0"></a>
 ## [3.4.0](https://github.com/rawilk/vue-context/releases/tag/3.4.0)
 

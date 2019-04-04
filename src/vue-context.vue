@@ -61,12 +61,6 @@
             };
         },
 
-        mounted () {
-            if (this.closeOnScroll) {
-                this.addScrollEventListener();
-            }
-        },
-
         beforeDestroy () {
             if (this.closeOnScroll) {
                 this.removeScrollEventListener();
@@ -96,6 +90,10 @@
                 this.data = null;
                 this.show = false;
 
+                if (this.closeOnScroll) {
+                    this.removeScrollEventListener();
+                }
+
                 if (emit) {
                     this.$emit('close');
                 }
@@ -123,6 +121,10 @@
                 this.$nextTick(() => {
                     this.positionMenu(event.clientY, event.clientX);
                     this.$el.focus();
+
+                    if (this.closeOnScroll) {
+                        this.addScrollEventListener();
+                    }
 
                     this.$emit('open', event, this.data, this.top, this.left);
                 });
