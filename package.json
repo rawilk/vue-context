@@ -26,13 +26,15 @@
   },
   "homepage": "https://github.com/rawilk/vue-context#readme",
   "dependencies": {
-    "vue": "^2.5.17",
     "vue-clickaway": "^2.2.2"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.4.3",
     "cross-env": "^5.2.0",
-    "laravel-mix": "^2.1.14",
-    "node-sass": "^4.9.4"
+    "laravel-mix": "^4.0.15",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   }
 }
