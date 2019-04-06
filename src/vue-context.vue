@@ -164,15 +164,15 @@
             /**
              * Add or remove the scroll event listener when the prop value changes.
              *
-             * @param {boolean} value
+             * @param {boolean} closeOnScroll
              * @param {boolean} oldValue
              */
-            closeOnScroll (value, oldValue) {
-                if (value === oldValue) {
+            closeOnScroll (closeOnScroll, oldValue) {
+                if (closeOnScroll === oldValue) {
                     return;
                 }
 
-                if (value) {
+                if (closeOnScroll && this.show) {
                     this.addScrollEventListener();
                 } else {
                     this.removeScrollEventListener();
