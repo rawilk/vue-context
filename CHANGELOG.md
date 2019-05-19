@@ -5,6 +5,8 @@ All notable changes to this project will be documented here.
 <a name="4.0.0"></a>
 ## [4.0.0](https://github.com/rawilk/vue-context/releases/tag/4.0.0)
 
+Released 2019-05-18
+
 ### Added 4.0.0
 - Added support for keyboard navigation (up and down arrows).
 - Added ability to close menu on esc.
