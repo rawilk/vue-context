@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented here.
 
+<a name="4.0.0"></a>
+## [4.0.0](https://github.com/rawilk/vue-context/releases/tag/4.0.0)
+
+### Added 4.0.0
+- Added support for keyboard navigation (up and down arrows).
+- Added ability to close menu on esc.
+- Added `lazy` prop as an alternative to `v-show`.
+- Added `tag` prop to specify menu tag (defaults to `<ul>`).
+
+### Changes 4.0.0
+- Default menu tag is now `<ul>` and menu is now the top-level element.
+- Changed how the menu is styled.
+
+### Updates 4.0.0
+- Updated build process and project structure.
+- Ran `npm audit fix` to fix vulnerabilities found from dependencies.
+
 <a name="3.4.2"></a>
 ## [3.4.2](https://github.com/rawilk/vue-context/releases/tag/3.4.2)
 
