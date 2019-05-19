@@ -7,16 +7,12 @@
 [![VueJS version](https://img.shields.io/badge/vue.js-2.x-green.svg?style=for-the-badge)](https://vuejs.org)
 
 `vue-context` provides a simple yet flexible context menu for Vue. It is styled for the standard `<ul>` tag, but any menu template can be used.
-The menu is lightweight with its only dependency being `vue-clickaway`. The menu has some basic styles applied to it but they can be easily 
+The menu is lightweight with its only dependencies being `vue-clickaway` and `core-js`. The menu has some basic styles applied to it but they can be easily 
 overridden by your own styles.
 <br><br>
 The menu disappears when you expect by utilizing `vue-clickaway` and it also optionally disappears when clicked on.
 
-![Screenshot](screenshot.png)
-
-## Note
-The API has changed since the last major release. Check [v2 documentation](https://vue-context.com/docs/2.0/overview) 
-if you use the old version.
+![Screenshot](screenshot.jpg)
 
 ## Getting Started
 
@@ -63,10 +59,12 @@ Next add an element to the page that will trigger the context menu to appear, an
     </div>
     
     <vue-context ref="menu">
-        <ul>
-            <li @click="onClick($event.target.innerText)">Option 1</li>
-            <li @click="onClick($event.target.innerText)">Option 2</li>
-        </ul>
+        <li>
+            <a href="#" @click.prevent="onClick($event.target.innerText)">Option 1</a>
+        </li>
+        <li>
+            <a href="#" @click.prevent="onClick($event.target.innerText)">Option 2</a>
+        </li>
     </vue-context>
     
 </div>
