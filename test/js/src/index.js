@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import { VueContext } from '../../../dist/vue-context';
+import { VueContext } from '../../../src/js/index';
+// import { VueContext } from '../../../dist/js/vue-context';
 
 new Vue({
     components: {
@@ -7,20 +8,19 @@ new Vue({
     },
 
     data: {
-        close: true
+        close: true,
+        items: [
+            'Cras justo odio',
+            'Dapibus ac facilisis in',
+            'Morbi leo risus',
+            'Porta ac consectetur ac',
+            'Vestibulum at eros'
+        ]
     },
 
     methods: {
-        onClick (data) {
-            // console.log(data);
+        onClick (text) {
+            alert(text);
         },
-
-        onClose () {
-            console.log('closing');
-        },
-
-        onOpen (event, data, top, left) {
-            console.log(data, top, left);
-        }
     },
 }).$mount('#app');
