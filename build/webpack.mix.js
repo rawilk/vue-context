@@ -4,7 +4,7 @@ const inProduction = mix.inProduction();
 
 mix
     .setPublicPath('dist')
-    .js('src/index.js', 'vue-context.js')
+    .js('src/js/index.js', 'js/vue-context.js')
     .sourceMaps(! inProduction)
     .webpackConfig({
         output: {

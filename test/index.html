@@ -3,22 +3,46 @@
     <head>
         <meta charset="UTF-8">
         <title>Vue Context Test Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
-    <body style="height:2000px;">
+    <body>
         <div id="app">
-            <p @contextmenu.prevent="$refs.menu.open($event, { foo: 'bar' })">
-                Right click on me
-            </p>
-
-            <vue-context ref="menu" :close-on-scroll="close"
-                         @close="onClose"
-                         @open="onOpen"
-            >
-                <ul slot-scope="child">
-                    <li @click="onClick(child.data)">Option 1 {{ child.data && child.data.foo }}</li>
-                    <li>Option 2</li>
+            <div class="container py-3 mt-5">
+                <ul class="list-group">
+                    <li v-for="(item, index) in items" :key="index"
+                        class="list-group-item"
+                        @contextmenu.prevent="$refs.menu.open"
+                    >
+                        {{ item }}
+                    </li>
                 </ul>
-            </vue-context>
+
+                <vue-context ref="menu">
+                    <template slot-scope="child">
+                        <li tabindex="0">
+                            <a href="#" class="v-context-item"
+                               @click.prevent="onClick('item 1')"
+                            >
+                                Do something
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="v-context-item"
+                               @click.prevent="onClick('item 2')"
+                            >
+                                Do something else
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="v-context-item"
+                               @click.prevent="onClick('item 3')"
+                            >
+                                Another option
+                            </a>
+                        </li>
+                    </template>
+                </vue-context>
+            </div>
         </div>
 
         <script src="js/dist/index.js"></script>

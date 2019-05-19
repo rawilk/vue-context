@@ -85,6 +85,5 @@ Please follow these coding conventions when contributing to the project.
 hash arrows.
 - I leave an empty line between code and return statements.
 - I ALWAYS put spaces between properties in an object (`{ VueContext }`, not `{VueContext}`).
-- I always a function declaration and its parameters (`methodName ()`, not `methodName()`).
 - I always use single quotes over double quotes, unless it makes sense to use double quotes. If that's the case, I usually prefer to
 use template strings instead of double quotes (`` `${variable} some text that has a single quote ' in it` `` instead of `variable + " some text that has a single quote ' in it"`).
