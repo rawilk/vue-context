@@ -72,7 +72,7 @@ export default {
             eventOn(window, 'scroll', this.close);
         },
 
-        close(emit = true) {
+        close() {
             if (! this.show) {
                 return;
             }
@@ -83,9 +83,7 @@ export default {
                 this.removeScrollEventListener();
             }
 
-            if (emit) {
-                this.$emit('close');
-            }
+            this.$emit('close');
         },
 
         focusItem(index, items) {
@@ -129,7 +127,7 @@ export default {
         },
 
         onClick() {
-            this.close(false);
+            this.close();
         },
 
         onKeydown(event) {
