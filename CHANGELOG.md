@@ -7,7 +7,7 @@ All notable changes to this project will be documented here.
 
 Released 2019-06-03
 
-## Bug Fixes 4.0.1
+### Bug Fixes 4.0.1
 - Always emit the close event on click. See issue [#23](https://github.com/rawilk/vue-context/issues/23) 
 
 <a name="4.0.0"></a>
