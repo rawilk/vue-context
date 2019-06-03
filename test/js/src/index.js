@@ -9,6 +9,7 @@ new Vue({
 
     data: {
         close: true,
+        closeCount: 0,
         items: [
             'Cras justo odio',
             'Dapibus ac facilisis in',
@@ -20,7 +21,12 @@ new Vue({
 
     methods: {
         onClick (text) {
-            alert(text);
+            // alert(text);
+        },
+
+        onClose() {
+            console.log('close fired');
+            console.log(++this.closeCount);
         },
     },
 }).$mount('#app');

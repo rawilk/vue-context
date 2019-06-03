@@ -17,7 +17,7 @@
                     </li>
                 </ul>
 
-                <vue-context ref="menu">
+                <vue-context ref="menu" @close="onClose">
                     <template slot-scope="child">
                         <li tabindex="0">
                             <a href="#" class="v-context-item"
