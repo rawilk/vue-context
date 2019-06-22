@@ -9,7 +9,7 @@ Released 2019-06-22
 
 ### Bug Fixes 4.0.2
 - Fix menu item width issues ([#26](https://github.com/rawilk/vue-context/issues/26)).
-- Remove outline from menu and menu items when given focus (([#26](https://github.com/rawilk/vue-context/issues/26))).
+- Remove outline from menu and menu items when given focus ([#26](https://github.com/rawilk/vue-context/issues/26)).
 
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/rawilk/vue-context/releases/tag/4.0.1)
