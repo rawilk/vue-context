@@ -13,14 +13,14 @@
     z-index: 1500;
     position: fixed;
     list-style: none;
+    box-sizing: border-box;
 
     > li {
         margin: 0;
 
         > a {
             display: block;
-            width: 100%;
-            padding: .50rem 1.5rem;
+            padding: .5rem 1.5rem;
             font-weight: 400;
             color: $item-color;
             text-decoration: none;
@@ -34,6 +34,14 @@
                 color: $item-hover-color;
                 background-color: $item-hover-bg;
             }
+
+            &:focus {
+                outline: 0;
+            }
         }
+    }
+
+    &:focus {
+        outline: 0;
     }
 }
