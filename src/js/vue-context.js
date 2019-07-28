@@ -49,16 +49,12 @@ export default {
             left: null,
             show: false,
             data: null,
-            localItemSelector: this.itemSelector
+            localItemSelector: ''
         };
     },
 
     created() {
-        if (isArray(this.localItemSelector)) {
-            this.localItemSelector = this.localItemSelector
-                .map(selector => `${selector}:not(.disabled):not([disabled])`)
-                .join(', ');
-        }
+        this.localItemSelector = this.mapItemSelector(this.itemSelector);
     },
 
     beforeDestroy() {
@@ -124,6 +120,16 @@ export default {
 
         getItems() {
             return filterVisible(selectAll(this.localItemSelector, this.$el));
+        },
+
+        mapItemSelector(itemSelector) {
+            if (isArray(itemSelector)) {
+                itemSelector = itemSelector
+                    .map(selector => `${selector}:not(.disabled):not([disabled])`)
+                    .join(', ');
+            }
+
+            return itemSelector;
         },
 
         onClick() {
@@ -211,6 +217,12 @@ export default {
                 this.removeScrollEventListener();
             }
         },
+
+        itemSelector(selector, oldValue) {
+            if (selector !== oldValue) {
+                this.localItemSelector = this.mapItemSelector(selector);
+            }
+        }
     },
 
     render(h) {
