@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented here.
 
+<a name="4.0.3"></a>
+## [4.0.3](https://github.com/rawilk/vue-context/releases/tag/4.0.3)
+
+Released 2019-07-28
+
+### Bug Fixes 4.0.3
+- Make `localItemSelector` reactive to changes from `itemSelector` prop ([#30](https://github.com/rawilk/vue-context/issues/30)).
+
+### Updates 4.0.3
+- Update dev dependencies
+
 <a name="4.0.2"></a>
 ## [4.0.2](https://github.com/rawilk/vue-context/releases/tag/4.0.2)
 
