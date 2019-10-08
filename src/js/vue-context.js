@@ -1,5 +1,15 @@
 import { directive as onClickaway } from 'vue-clickaway/index';
-import { eventOff, eventOn, filterVisible, isArray, keyCodes, selectAll, setAttr } from './utils';
+import {
+    eventOff,
+    eventOn,
+    filterVisible,
+    isArray,
+    keyCodes,
+    selectAll,
+    setAttr,
+    getBCR,
+    parentElementByClassName
+} from './utils';
 import { normalizeSlot } from './normalize-slot';
 import '../sass/vue-context.scss';
 
@@ -49,7 +59,8 @@ export default {
             left: null,
             show: false,
             data: null,
-            localItemSelector: ''
+            localItemSelector: '',
+            activeSubMenu: null,
         };
     },
 
@@ -68,12 +79,27 @@ export default {
             eventOn(window, 'scroll', this.close);
         },
 
+        addHoverEventListener(element) {
+            element.querySelectorAll('.v-context__sub').forEach(
+                (subMenuNode) => {
+                    eventOn(subMenuNode, 'mouseenter', this.openSubMenu);
+                    eventOn(subMenuNode, 'mouseleave', this.closeSubMenu);
+                }
+            );
+        },
+
         close() {
             if (! this.show) {
                 return;
             }
 
+            // make sure all sub menus are closed
+            while (this.activeSubMenu !== null) {
+                parentElementByClassName(this.activeSubMenu, 'v-context__sub').dispatchEvent(new Event('mouseleave'));
+            }
+
             this.resetData();
+            this.removeHoverEventListener(this.$el);
 
             if (this.closeOnScroll) {
                 this.removeScrollEventListener();
@@ -119,7 +145,8 @@ export default {
         },
 
         getItems() {
-            return filterVisible(selectAll(this.localItemSelector, this.$el));
+            // if a sub menu is active only return the elements of the sub menu to keep the scope
+            return filterVisible(selectAll(this.localItemSelector, this.activeSubMenu || this.$el));
         },
 
         mapItemSelector(itemSelector) {
@@ -148,6 +175,27 @@ export default {
             } else if (key === keyCodes.UP) {
                 // Up arrow
                 this.focusNext(event, true);
+            } else if (key === keyCodes.RIGHT) {
+                // check if a parent element which is associated with a sub menu can be found.
+                const menuContainer = parentElementByClassName(event.target, 'v-context__sub');
+
+                // try to open a sub menu if the sub menu isn't the current sub menu
+                if (menuContainer && menuContainer.getElementsByClassName('v-context')[0] !== this.activeSubMenu) {
+                    menuContainer.dispatchEvent(new Event('mouseenter'));
+                    this.focusNext(event, false);
+                }
+            } else if (key === keyCodes.LEFT) {
+                if (!this.activeSubMenu) {
+                    return;
+                }
+
+                const parentMenu = parentElementByClassName(this.activeSubMenu, 'v-context__sub');
+                parentMenu.dispatchEvent(new Event('mouseleave'));
+
+                const items = this.getItems(),
+                      index = items.indexOf(parentMenu.getElementsByTagName('a')[0]);
+
+                this.focusItem(index, items);
             }
         },
 
@@ -156,9 +204,11 @@ export default {
             this.show = true;
 
             this.$nextTick(() => {
-                this.positionMenu(event.clientY, event.clientX);
+                [this.top, this.left] = this.positionMenu(event.clientY, event.clientX, this.$el);
+
                 this.$el.focus();
                 this.setItemRoles();
+                this.addHoverEventListener(this.$el);
 
                 if (this.closeOnScroll) {
                     this.addScrollEventListener();
@@ -168,9 +218,61 @@ export default {
             });
         },
 
-        positionMenu(top, left) {
-            const largestHeight = window.innerHeight - this.$el.offsetHeight - 25;
-            const largestWidth = window.innerWidth - this.$el.offsetWidth - 25;
+        openSubMenu (event) {
+            const subMenuElement = this.getSubMenuElementByEvent(event),
+                  parentMenu = parentElementByClassName(subMenuElement.parentElement, 'v-context'),
+                  bcr = getBCR(event.target);
+
+            // check if another sub menu is open. In this case make sure no other as well as no nested sub menu is open
+            if (this.activeSubMenu !== parentMenu) {
+                while (this.activeSubMenu !== null
+                    && this.activeSubMenu !== parentMenu
+                    && this.activeSubMenu !== subMenuElement
+                ) {
+                    parentElementByClassName(this.activeSubMenu, 'v-context__sub')
+                        .dispatchEvent(new Event('mouseleave'));
+                }
+            }
+
+            // first set the display and afterwards execute position calculation for correct element offsets
+            subMenuElement.style.display = 'block';
+
+            let [elementTop, elementLeft] = this.positionMenu(bcr.top, bcr.right - 10, subMenuElement);
+
+            subMenuElement.style.left = `${elementLeft}px`;
+            subMenuElement.style.top = `${elementTop}px`;
+
+            this.activeSubMenu = subMenuElement;
+        },
+
+        closeSubMenu (event) {
+            const subMenuElement = this.getSubMenuElementByEvent(event),
+                  parentMenu = parentElementByClassName(subMenuElement, 'v-context');
+
+            // if a sub menu is closed and it's not the currently active sub menu (eg. a lowe layered sub menu closed
+            // by a mouseleave event) close all nested sub menus
+            if (this.activeSubMenu !== subMenuElement) {
+                while (this.activeSubMenu !== null && this.activeSubMenu !== subMenuElement) {
+                    parentElementByClassName(this.activeSubMenu, 'v-context__sub')
+                        .dispatchEvent(new Event('mouseleave'));
+                }
+            }
+
+            subMenuElement.style.display = 'none';
+
+            // check if a parent menu exists and the parent menu is a sub menu to keep track of the correct sub menu
+            this.activeSubMenu = parentMenu && parentElementByClassName(parentMenu, 'v-context__sub')
+                ? parentMenu
+                : null;
+        },
+
+        getSubMenuElementByEvent (event) {
+            return event.target.getElementsByTagName('ul')[0];
+        },
+
+        positionMenu(top, left, element) {
+            const largestHeight = window.innerHeight - element.offsetHeight - 25;
+            const largestWidth = window.innerWidth - element.offsetWidth - 25;
 
             if (top > largestHeight) {
                 top = largestHeight;
@@ -180,12 +282,20 @@ export default {
                 left = largestWidth;
             }
 
-            this.top = top;
-            this.left = left;
+            return [top, left];
         },
 
         removeScrollEventListener() {
             eventOff(window, 'scroll', this.close);
+        },
+
+        removeHoverEventListener(element) {
+            element.querySelectorAll('.v-context__sub').forEach(
+                (subMenuNode) => {
+                    eventOff(subMenuNode, 'mouseenter', this.openSubMenu);
+                    eventOff(subMenuNode, 'mouseleave', this.closeSubMenu);
+                }
+            );
         },
 
         resetData() {
