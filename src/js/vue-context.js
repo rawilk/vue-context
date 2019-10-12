@@ -1,7 +1,6 @@
 import { directive as onClickaway } from 'vue-clickaway/index';
 import { eventOff, eventOn, filterVisible, isArray, keyCodes, selectAll, setAttr } from './utils';
 import { normalizeSlot } from './normalize-slot';
-import '../sass/vue-context.scss';
 
 export default {
     directives: {
