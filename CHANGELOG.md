@@ -7,7 +7,7 @@ All notable changes to this project will be documented here.
 
 Released 2019-10-11
 
-## Breaking changes 4.1.0
+## Breaking Changes 4.1.0
 - Move menu styles from js to its own stylesheet ([#36](https://github.com/rawilk/vue-context/issues/36))
 
 ## Changes 4.1.0
