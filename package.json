@@ -26,7 +26,6 @@
   },
   "homepage": "https://vue-context.com/docs",
   "dependencies": {
-    "core-js": ">=2.6.5 <3.0.0",
     "vue-clickaway": "^2.2.2"
   },
   "devDependencies": {
