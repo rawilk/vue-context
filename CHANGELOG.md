@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented here.
 
+<a name="4.1.0"></a>
+## [4.1.0](https://github.com/rawilk/vue-context/releases/tag/4.0.3)
+
+Released 2019-10-11
+
+## Breaking changes 4.1.0
+- Move menu styles from js to its own stylesheet ([#36](https://github.com/rawilk/vue-context/issues/36))
+
+## Changes 4.1.0
+- Remove core-js as a dependency in favor of local polyfills for a smaller build size ([#33](https://github.com/rawilk/vue-context/issues/33))
+
 <a name="4.0.3"></a>
 ## [4.0.3](https://github.com/rawilk/vue-context/releases/tag/4.0.3)
 
