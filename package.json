@@ -7,7 +7,8 @@
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "dev-test": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack-test.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-test": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack-test.mix.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "styles": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack-styles.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [
     "Vue",

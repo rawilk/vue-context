@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import { VueContext } from '../../../src/js/index';
-// import { VueContext } from '../../../dist/js/vue-context';
+// import { VueContext } from '../../../src/js/index';
+import { VueContext } from '../../../dist/js/vue-context';
 
 new Vue({
     components: {
