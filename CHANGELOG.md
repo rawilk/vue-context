@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented here.
 
+<a name="4.1.1"></a>
+## [4.1.1](https://github.com/rawilk/vue-context/releases/tag/4.1.1)
+
+Released 2019-10-20
+
+## Bug Fixes 4.1.1
+- Fix bug of "Unknown custom element" ([#40](https://github.com/rawilk/vue-context/issues/40)).
+
 <a name="4.1.0"></a>
 ## [4.1.0](https://github.com/rawilk/vue-context/releases/tag/4.0.3)
 
