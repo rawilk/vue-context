@@ -10,6 +10,7 @@ Released ?
 ### Changes
 - Update entry point to source ([#33](https://github.com/rawilk/vue-context/issues/33)).
 - No longer build component with webpack ([#33](https://github.com/rawilk/vue-context/issues/33)).
+- Add default export in entry point ([#41](https://github.com/rawilk/vue-context/issues/41)).
 
 <a name="4.1.1"></a>
 ## [4.1.1](https://github.com/rawilk/vue-context/releases/tag/4.1.1)
