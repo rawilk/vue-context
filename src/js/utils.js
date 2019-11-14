@@ -17,7 +17,9 @@ export const isArray = Array.isArray;
 
 export const keyCodes = {
     ESC: 27,
+    LEFT: 37,
     UP: 38,
+    RIGHT: 39,
     DOWN: 40
 };
 
@@ -51,7 +53,7 @@ export const filterVisible = elements => (elements || []).filter(isVisible);
 
 // Return the Bounding Client Rect of an element
 // Returns `null` if not an element
-const getBCR = el => (isElement(el) ? el.getBoundingClientRect() : null);
+export const getBCR = el => (isElement(el) ? el.getBoundingClientRect() : null);
 
 // Determine if an element is an HTML element
 const isElement = el => Boolean(el && el.nodeType === Node.ELEMENT_NODE);
@@ -80,4 +82,14 @@ export const setAttr = (el, attr, value) => {
     if (attr && isElement(el)) {
         el.setAttribute(attr, value);
     }
+};
+
+export const parentElementByClassName = (element, className) => {
+    let parentElement = element.parentElement;
+
+    while (parentElement !== null && !parentElement.classList.contains(className)) {
+        parentElement = parentElement.parentElement;
+    }
+
+    return parentElement;
 };

@@ -75,11 +75,21 @@ Next add an element to the page that will trigger the context menu to appear, an
 
 ```bash
 @import '~vue-context/dist/css/vue-context.css';
+
+// Or
+@import '~vue-context/src/sass/vue-context';
 ```
 
 ## Documentation/Demo
 
 For full documentation and demos, go here: https://vue-context.com/docs
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+
+- [rawilk](https://github.com/rawilk)
+- [wol-soft](https://github.com/wol-soft)
 
 ## License
 
