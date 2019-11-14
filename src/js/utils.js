@@ -1,5 +1,14 @@
-import fromPolyfill from 'core-js/library/fn/array/from';
-import isArrayPolyfill from 'core-js/library/fn/array/is-array';
+if (! Array.from) {
+    Array.from = object => {
+        'use strict';
+
+        return [].slice.call(object);
+    };
+}
+
+if (! Array.isArray) {
+    Array.isArray = arg => Object.prototype.toString.call(arg) === '[object Array]';
+}
 
 // --- Constants ---
 const arrayFrom = Array.from || fromPolyfill;

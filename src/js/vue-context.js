@@ -11,7 +11,6 @@ import {
     parentElementByClassName
 } from './utils';
 import { normalizeSlot } from './normalize-slot';
-import '../sass/vue-context.scss';
 
 export default {
     directives: {
@@ -60,7 +59,7 @@ export default {
             show: false,
             data: null,
             localItemSelector: '',
-            activeSubMenu: null,
+            activeSubMenu: null
         };
     },
 
@@ -81,7 +80,7 @@ export default {
 
         addHoverEventListener(element) {
             element.querySelectorAll('.v-context__sub').forEach(
-                (subMenuNode) => {
+                subMenuNode => {
                     eventOn(subMenuNode, 'mouseenter', this.openSubMenu);
                     eventOn(subMenuNode, 'mouseleave', this.closeSubMenu);
                 }
@@ -218,7 +217,7 @@ export default {
             });
         },
 
-        openSubMenu (event) {
+        openSubMenu(event) {
             const subMenuElement = this.getSubMenuElementByEvent(event),
                   parentMenu = parentElementByClassName(subMenuElement.parentElement, 'v-context'),
                   bcr = getBCR(event.target);
@@ -245,7 +244,7 @@ export default {
             this.activeSubMenu = subMenuElement;
         },
 
-        closeSubMenu (event) {
+        closeSubMenu(event) {
             const subMenuElement = this.getSubMenuElementByEvent(event),
                   parentMenu = parentElementByClassName(subMenuElement, 'v-context');
 
