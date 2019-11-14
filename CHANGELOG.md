@@ -16,6 +16,10 @@ Released 2019-11-14
 - No longer build component with webpack ([#33](https://github.com/rawilk/vue-context/issues/33)).
 - Component source is available through npm now, including the sass files.
 
+### Release notes
+- Even though there shouldn't be any breaking changes in this release, it's a major release because
+breaking changes were introduced in version 4.1.0, which should have been a major release instead.
+
 <a name="4.1.1"></a>
 ## [4.1.1](https://github.com/rawilk/vue-context/releases/tag/4.1.1)
 
