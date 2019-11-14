@@ -2,3 +2,4 @@ node_modules/
 .idea
 npm-debug.log*
 **/mix-manifest.json
+test/js/dist/
