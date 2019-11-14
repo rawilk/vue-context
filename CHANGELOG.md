@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented here.
 
+<a name="5.0.0"></a>
+## [5.0.0](https://github.com/rawilk/vue-context/releases/tag/5.0.0)
+
+Released ?
+
+### Changes
+- Update entry point to source ([#33](https://github.com/rawilk/vue-context/issues/33)).
+- No longer build component with webpack ([#33](https://github.com/rawilk/vue-context/issues/33)).
+
 <a name="4.1.1"></a>
 ## [4.1.1](https://github.com/rawilk/vue-context/releases/tag/4.1.1)
 
