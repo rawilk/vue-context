@@ -81,6 +81,13 @@ Next add an element to the page that will trigger the context menu to appear, an
 
 For full documentation and demos, go here: https://vue-context.com/docs
 
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+
+- [rawilk](https://github.com/rawilk)
+- [wol-soft](https://github.com/wol-soft)
+
 ## License
 
 `vue-context` uses the MIT License (MIT). Please see the [license file](https://github.com/rawilk/vue-context/blob/master/LICENSE) for more information.
