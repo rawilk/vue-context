@@ -41,6 +41,10 @@ export default {
         tag: {
             type: String,
             default: 'ul'
+        },
+        subMenuOffset: {
+            type: Number,
+            default: 10
         }
     },
 
@@ -236,7 +240,7 @@ export default {
             // first set the display and afterwards execute position calculation for correct element offsets
             subMenuElement.style.display = 'block';
 
-            let [elementTop, elementLeft] = this.positionMenu(bcr.top, bcr.right - 10, subMenuElement);
+            let [elementTop, elementLeft] = this.positionMenu(bcr.top, bcr.right - (this.subMenuOffset), subMenuElement);
 
             subMenuElement.style.left = `${elementLeft}px`;
             subMenuElement.style.top = `${elementTop}px`;
