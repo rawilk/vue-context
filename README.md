@@ -90,6 +90,7 @@ This project exists thanks to all the people who contribute. [[Contribute]](CONT
 
 - [rawilk](https://github.com/rawilk)
 - [wol-soft](https://github.com/wol-soft)
+- [nachodd](https://github.com/nachodd)
 
 ## License
 
