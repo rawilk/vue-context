@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented here.
 
+<a name="5.1.0"></a>
+## [5.1.0](https://github.com/rawilk/vue-context/releases/tag/5.1.0)
+
+Released 2020-03-19
+
+### Added
+- Add prop `subMenuOffset` for users to specify a custom offset ([#50](https://github.com/rawilk/vue-context/pull/50)).
+
+### Updated
+- Update dev dependencies.
+
 <a name="5.0.0"></a>
 ## [5.0.0](https://github.com/rawilk/vue-context/releases/tag/5.0.0)
 
