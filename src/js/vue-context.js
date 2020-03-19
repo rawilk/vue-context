@@ -38,13 +38,13 @@ export default {
             type: String,
             default: 'menu'
         },
-        tag: {
-            type: String,
-            default: 'ul'
-        },
         subMenuOffset: {
             type: Number,
             default: 10
+        },
+        tag: {
+            type: String,
+            default: 'ul'
         }
     },
 
@@ -113,9 +113,7 @@ export default {
 
         focusItem(index, items) {
             const el = items.find((el, idx) => idx === index);
-            if (el && el.focus) {
-                el.focus();
-            }
+            el && el.focus();
         },
 
         focusNext(event, up) {
@@ -240,7 +238,7 @@ export default {
             // first set the display and afterwards execute position calculation for correct element offsets
             subMenuElement.style.display = 'block';
 
-            let [elementTop, elementLeft] = this.positionMenu(bcr.top, bcr.right - (this.subMenuOffset), subMenuElement);
+            let [elementTop, elementLeft] = this.positionMenu(bcr.top, bcr.right - this.subMenuOffset, subMenuElement);
 
             subMenuElement.style.left = `${elementLeft}px`;
             subMenuElement.style.top = `${elementTop}px`;
