@@ -42,6 +42,22 @@ export default {
             type: Number,
             default: 10
         },
+        useScrollHeight: {
+            type: Boolean,
+            default: false
+        },
+        useScrollWidth: {
+            type: Boolean,
+            default: false
+        },
+        heightOffset: {
+            type: Number,
+            default: 25
+        },
+        widthOffset: {
+            type: Number,
+            default: 25
+        },
         tag: {
             type: String,
             default: 'ul'
@@ -272,8 +288,19 @@ export default {
         },
 
         positionMenu(top, left, element) {
-            const largestHeight = window.innerHeight - element.offsetHeight - 25;
-            const largestWidth = window.innerWidth - element.offsetWidth - 25;
+            const largestHeight =
+                window.innerHeight -
+                (this.$props.useScrollHeight
+                    ? element.scrollHeight
+                    : element.offsetHeight) -
+                this.$props.heightOffset;
+
+            const largestWidth =
+                window.innerWidth -
+                (this.$props.useScrollWidth
+                    ? element.scrollWidth
+                    : element.offsetWidth) -
+                this.$props.widthOffset;
 
             if (top > largestHeight) {
                 top = largestHeight;
