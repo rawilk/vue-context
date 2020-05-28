@@ -7,7 +7,7 @@
 [![VueJS version](https://img.shields.io/badge/vue.js-2.x-green.svg?style=for-the-badge)](https://vuejs.org)
 
 `vue-context` provides a simple yet flexible context menu for Vue. It is styled for the standard `<ul>` tag, but any menu template can be used.
-The menu is lightweight with its only dependency being `vue-clickaway`. The menu has some basic styles applied to it but they can be easily 
+The menu is lightweight with its only dependency being `vue-clickaway`. The menu has some basic styles applied to it, but they can be easily 
 overridden by your own styles.
 <br><br>
 The menu disappears when you expect by utilizing `vue-clickaway` and it also optionally disappears when clicked on.
@@ -91,6 +91,7 @@ This project exists thanks to all the people who contribute. [[Contribute]](CONT
 - [rawilk](https://github.com/rawilk)
 - [wol-soft](https://github.com/wol-soft)
 - [nachodd](https://github.com/nachodd)
+- [Nberezhnoy](https://github.com/Nberezhnoy)
 
 ## License
 
