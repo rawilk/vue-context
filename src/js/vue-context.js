@@ -288,19 +288,11 @@ export default {
         },
 
         positionMenu(top, left, element) {
-            const largestHeight =
-                window.innerHeight -
-                (this.$props.useScrollHeight
-                    ? element.scrollHeight
-                    : element.offsetHeight) -
-                this.$props.heightOffset;
+            const elementHeight = this.useScrollHeight ? element.scrollHeight : element.offsetHeight;
+            const largestHeight = window.innerHeight - elementHeight - this.heightOffset;
 
-            const largestWidth =
-                window.innerWidth -
-                (this.$props.useScrollWidth
-                    ? element.scrollWidth
-                    : element.offsetWidth) -
-                this.$props.widthOffset;
+            const elementWidth = this.useScrollWidth ? element.scrollWidth : element.offsetWidth;
+            const largestWidth = window.innerWidth - elementWidth - this.widthOffset;
 
             if (top > largestHeight) {
                 top = largestHeight;
