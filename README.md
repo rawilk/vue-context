@@ -32,7 +32,7 @@ Import the component and use it in your app.
 
 ```js
 import Vue from 'vue';
-import { VueContext } from 'vue-context';
+import VueContext from 'vue-context';
 
 new Vue({
     components: {
