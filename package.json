@@ -29,11 +29,11 @@
     "vue-clickaway": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-env": "^7.11.0",
     "cross-env": "^5.2.1",
     "laravel-mix": "^4.1.4",
     "resolve-url-loader": "^2.3.2",
-    "sass": "^1.26.3",
+    "sass": "^1.26.10",
     "sass-loader": "^7.3.1",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
