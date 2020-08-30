@@ -26,9 +26,7 @@ sort: 1
                        :key="index"
                        @contextmenu.prevent="$refs.menu.open"
                     >
-                        <div class="flex items-center px-4 py-4 sm:px-6"
-                             :class="{ 'pt-0': index === 0, 'pb-0': index + 1 === items.length }"
-                        >
+                        <div class="flex items-center px-4 py-4 sm:px-6">
                             <div class="min-w-0 flex-1 md:grid md:grid-cols-2 md:gap-4">
                                 <div class="text-sm leading-5 font-medium text-gray-600 truncate" v-text="item"></div>
                             </div>
