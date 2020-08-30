@@ -6,7 +6,7 @@ sort: 1
 {.tip}
 > Right click on each item to open the context menu.
 
-<div id="app">
+<div id="app" style="margin-bottom: 1rem;">
     <basic-usage></basic-usage>
 </div>
 
