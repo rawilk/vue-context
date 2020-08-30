@@ -32,7 +32,7 @@
         </div>
 
         <vue-context ref="menu">
-            <template slot-scope="child" v-if="child && child.data">
+            <template v-slot="child" v-if="child.data">
                 <li>
                     <a @click.prevent="alertName(child.data.name)">
                         Alert name
