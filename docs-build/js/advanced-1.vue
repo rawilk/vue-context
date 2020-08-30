@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <ul>
+            <ul class="demo">
                 <li>
                     <a href="#"
                        class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
@@ -32,7 +32,7 @@
         </div>
 
         <vue-context ref="menu">
-            <template slot-scope="child" v-if="child.data">
+            <template slot-scope="child" v-if="child && child.data">
                 <li>
                     <a @click.prevent="alertName(child.data.name)">
                         Alert name
