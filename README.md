@@ -12,7 +12,7 @@ overridden by your own styles.
 <br><br>
 The menu disappears when you expect by utilizing `vue-clickaway` and it also optionally disappears when clicked on.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](docs/images/screenshot.jpg)
 
 ## Getting Started
 
