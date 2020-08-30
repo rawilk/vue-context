@@ -1,5 +1,5 @@
 ---
-title: Basic Usage
+title: Basic Demo
 sort: 1
 ---
 
