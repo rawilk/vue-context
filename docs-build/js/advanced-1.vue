@@ -31,16 +31,16 @@
             </button>
         </div>
 
-        <vue-context ref="menu">
-            <template v-slot="child" v-if="child.data">
+        <vue-context ref="menu" v-slot="{ data }">
+            <template v-if="data">
                 <li>
-                    <a @click.prevent="alertName(child.data.name)">
+                    <a @click.prevent="alertName(data.name)">
                         Alert name
                     </a>
                 </li>
                 <li>
-                    <a @click.prevent="remove(child.data.index)">
-                        Delete "{{ child.data.name }}"
+                    <a @click.prevent="remove(data.index)">
+                        Delete "{{ data.name }}"
                     </a>
                 </li>
             </template>
