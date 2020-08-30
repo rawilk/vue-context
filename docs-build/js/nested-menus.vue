@@ -1,19 +1,3 @@
----
-title: Basic Usage
-sort: 1
----
-
-{.tip}
-> Right click on each item to open the context menu.
-
-<div id="app">
-    <basic-usage></basic-usage>
-</div>
-
-{.tip}
-> Try using the up and down arrows as well to navigate the menu.
-
-```html
 <template>
     <div>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
@@ -40,14 +24,29 @@ sort: 1
 
         <vue-context ref="menu">
             <li>
-                <a @click.prevent="onClick($event.target.innerText)">
-                    Do something
-                </a>
+                <a @click.prevent="alertText($event.target.innerText)">Not nested</a>
+            </li>
+            <li class="v-context__sub">
+                <a @click.prevent="alertText($event.target.innerText)">Has sub menu</a>
+                <ul class="v-context">
+                    <li>
+                        <a @click.prevent="alertText($event.target.innerText)">Nested child</a>
+                    </li>
+                    <li class="v-context__sub">
+                        <a @click.prevent="alertText($event.target.innerText)">Another nested menu</a>
+                        <ul class="v-context">
+                            <li>
+                                <a @click.prevent="alertText($event.target.innerText)">Another level deep</a>
+                            </li>
+                            <li>
+                                <a @click.prevent="alertText($event.target.innerText)">There is no limit</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a @click.prevent="onClick($event.target.innerText)">
-                    Do something else
-                </a>
+                <a @click.prevent="alertText($event.target.text)">Also not nested</a>
             </li>
         </vue-context>
     </div>
@@ -60,7 +59,7 @@ sort: 1
     export default {
         components: { VueContext },
 
-        data () {
+        data() {
             return {
                 items: [
                     'Cras justo odio',
@@ -73,12 +72,9 @@ sort: 1
         },
 
         methods: {
-            onClick (text) {
-                alert(`You clicked on: "${text}"`);
+            alertText(text) {
+                alert(`You clicked: ${text}`);
             }
         }
     };
 </script>
-```
-
-<script src="../scripts/vue-context-demos.js"></script>

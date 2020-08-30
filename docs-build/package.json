@@ -1,0 +1,23 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npm run cleanup",
+        "watch": "npm run development -- --watch",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npm run cleanup",
+        "cleanup": "./cleanup.js"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.2",
+        "fs": "0.0.1-security",
+        "laravel-mix": "^5.0.5",
+        "resolve-url-loader": "^3.1.1",
+        "sass": "^1.26.10",
+        "sass-loader": "^10.0.1",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "vue": "^2.6.12",
+        "vue-context": "^6.0.0"
+    }
+}

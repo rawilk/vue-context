@@ -1,21 +1,18 @@
----
-title: Basic Usage
-sort: 1
----
-
-{.tip}
-> Right click on each item to open the context menu.
-
-<div id="app">
-    <basic-usage></basic-usage>
-</div>
-
-{.tip}
-> Try using the up and down arrows as well to navigate the menu.
-
-```html
 <template>
-    <div>
+    <div class="mt-4">
+        <div class="mb-4">
+            <div class="flex items-center">
+                <input id="toggle-close"
+                       type="checkbox"
+                       class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                       v-model="closeOnClick"
+                >
+                <label for="toggle-close" class="ml-2 block text-sm leading-5 text-gray-900">
+                    Close on Click
+                </label>
+            </div>
+        </div>
+
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
             <ul>
                 <li>
@@ -38,15 +35,10 @@ sort: 1
             </ul>
         </div>
 
-        <vue-context ref="menu">
+        <vue-context ref="menu" :close-on-click="closeOnClick">
             <li>
-                <a @click.prevent="onClick($event.target.innerText)">
-                    Do something
-                </a>
-            </li>
-            <li>
-                <a @click.prevent="onClick($event.target.innerText)">
-                    Do something else
+                <a>
+                    {{ closeOnClick ? 'I will close on click' : 'I will stay open on click' }}
                 </a>
             </li>
         </vue-context>
@@ -62,6 +54,7 @@ sort: 1
 
         data () {
             return {
+                closeOnClick: false,
                 items: [
                     'Cras justo odio',
                     'Dapibus ac facilisis in',
@@ -70,15 +63,6 @@ sort: 1
                     'Vestibulum at eros'
                 ]
             };
-        },
-
-        methods: {
-            onClick (text) {
-                alert(`You clicked on: "${text}"`);
-            }
         }
     };
 </script>
-```
-
-<script src="../scripts/vue-context-demos.js"></script>

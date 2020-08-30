@@ -1,19 +1,3 @@
----
-title: Basic Usage
-sort: 1
----
-
-{.tip}
-> Right click on each item to open the context menu.
-
-<div id="app">
-    <basic-usage></basic-usage>
-</div>
-
-{.tip}
-> Try using the up and down arrows as well to navigate the menu.
-
-```html
 <template>
     <div>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
@@ -79,6 +63,3 @@ sort: 1
         }
     };
 </script>
-```
-
-<script src="../scripts/vue-context-demos.js"></script>
