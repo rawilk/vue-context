@@ -121,7 +121,7 @@ can be used and the accessiblity attributes can be added to each menu item.
 </script>
 ```
 
-See [the api](/docs/vue-context/v6/api/vue-context) for more information on props.
+See [the api](/docs/vue-context/v6/api/api) for more information on props.
 
 ## Events
 
