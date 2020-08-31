@@ -38,10 +38,10 @@ context menu on.
         components: { VueContext },
 
         methods: {
-            onClick (text) {
+            onClick(text) {
                 alert(`You clicked "${text}"!`);
-            }
-        }
+            },
+        },
     };
 </script>
 ```
