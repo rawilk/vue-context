@@ -17,18 +17,16 @@ fs.rmdirSync(__dirname + '/dist', { recursive: true });
 console.log('All extra files cleaned up!');
 
 // Add "ids" to the files for cache busting, and also update the script references in the docs
-
-// const docFiles = [
-//     __dirname + '/../docs/demos/basic.md',
-//     __dirname + '/../docs/demos/advanced.md',
-// ];
-
 const docFiles = {
+    basic: __dirname + '/../docs/demos/basic.md',
     advanced: __dirname + '/../docs/demos/advanced.md',
+    props: __dirname + '/../docs/demos/props.md',
 }
 
 const scripts = {
+    basic: __dirname + '/../docs/scripts/vue-context-basic-demos.js',
     advanced: __dirname + '/../docs/scripts/vue-context-advanced-demos.js',
+    props: __dirname + '/../docs/scripts/vue-context-props-demos.js',
 };
 
 const renameFile = path => {
@@ -67,28 +65,3 @@ Object.keys(scripts).forEach(key => {
 });
 
 return;
-
-fs.readdir(__dirname + '/../docs/scripts', (err, files) => {
-    if (err) {
-        return;
-    }
-
-    files.forEach(file => {
-        const id = Date.now();
-
-        const oldPath = __dirname + '/../docs/scripts/' + file;
-
-        const parts = file.split('.');
-
-        const newPath = __dirname + '/../docs/scripts/' + parts[0] + `.${id}.` + parts[1];
-
-        fs.renameSync(oldPath, newPath);
-
-        docFiles.forEach(doc => {
-            const content = fs.readFileSync(doc, 'utf-8');
-            const regex = new RegExp("<script[\s\S]*?>[\s\S]*?<\/script>", 'gi');
-
-            console.log(content.replace(regex, '<foo>'));
-        });
-    });
-});

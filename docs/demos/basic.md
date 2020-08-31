@@ -6,7 +6,7 @@ sort: 1
 {.tip}
 > Right click on each item to open the context menu.
 
-<div id="app" style="margin-bottom: 1rem;">
+<div id="basic-app" style="margin-bottom: 1rem;">
     <basic-usage></basic-usage>
 </div>
 
@@ -52,31 +52,31 @@ sort: 1
 </template>
 
 <script>
-    import VueContext from 'vue-context';
-    import 'vue-context/src/sass/vue-context.scss';
+import VueContext from 'vue-context';
+import 'vue-context/src/sass/vue-context.scss';
 
-    export default {
-        components: { VueContext },
+export default {
+    components: { VueContext },
 
-        data () {
-            return {
-                items: [
-                    'Cras justo odio',
-                    'Dapibus ac facilisis in',
-                    'Morbi leo risus',
-                    'Porta ac consectetur ac',
-                    'Vestibulum at eros'
-                ]
-            };
+    data() {
+        return {
+            items: [
+                'Cras justo odio',
+                'Dapibus ac facilisis in',
+                'Morbi leo risus',
+                'Porta ac consectetur ac',
+                'Vestibulum at eros',
+            ]
+        };
+    },
+
+    methods: {
+        onClick(text) {
+            alert(`You clicked on: "${text}"`);
         },
-
-        methods: {
-            onClick (text) {
-                alert(`You clicked on: "${text}"`);
-            }
-        }
-    };
+    },
+};
 </script>
 ```
 
-<script src="../scripts/vue-context-demos.js"></script>
+<script src="../scripts/vue-context-basic-demos.1598841649507.js"></script>

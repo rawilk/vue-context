@@ -36,28 +36,28 @@
 </template>
 
 <script>
-    import VueContext from 'vue-context';
-    import 'vue-context/src/sass/vue-context.scss';
+import VueContext from 'vue-context';
+import 'vue-context/src/sass/vue-context.scss';
 
-    export default {
-        components: { VueContext },
+export default {
+    components: { VueContext },
 
-        data () {
-            return {
-                items: [
-                    'Cras justo odio',
-                    'Dapibus ac facilisis in',
-                    'Morbi leo risus',
-                    'Porta ac consectetur ac',
-                    'Vestibulum at eros'
-                ]
-            };
+    data() {
+        return {
+            items: [
+                'Cras justo odio',
+                'Dapibus ac facilisis in',
+                'Morbi leo risus',
+                'Porta ac consectetur ac',
+                'Vestibulum at eros',
+            ]
+        };
+    },
+
+    methods: {
+        onClick(text) {
+            alert(`You clicked on: "${text}"`);
         },
-
-        methods: {
-            onClick (text) {
-                alert(`You clicked on: "${text}"`);
-            }
-        }
-    };
+    },
+};
 </script>

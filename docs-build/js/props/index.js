@@ -1,13 +1,16 @@
 import Vue from 'vue';
-import BasicUsage from './basic-usage';
-
 import CloseOnClick from './close-on-click';
 import CloseOnScroll from './close-on-scroll';
 
+// Need a separate vue app for each of these so we can render the markdown properly.
 new Vue({
     components: {
-        BasicUsage,
         CloseOnClick,
+    },
+}).$mount('#close-on-click-app');
+
+new Vue({
+    components: {
         CloseOnScroll,
     },
-}).$mount('#app');
+}).$mount('#close-on-scroll-app');

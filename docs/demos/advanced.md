@@ -304,4 +304,4 @@ export default {
 
 [Demo Source](https://github.com/rawilk/vue-context/blob/master/docs-build/js/advanced/nested-menus.vue)
 
-<script src="../scripts/vue-context-advanced-demos.1598840580885.js"></script>
+<script src="../scripts/vue-context-advanced-demos.1598841649510.js"></script>
