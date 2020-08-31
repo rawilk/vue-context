@@ -10,9 +10,7 @@
                        :key="index"
                        @contextmenu.prevent="$refs.menu.open"
                     >
-                        <div class="flex items-center px-4 py-4 sm:px-6"
-                             :class="{ 'pt-0': index === 0, 'pb-0': index + 1 === items.length }"
-                        >
+                        <div class="flex items-center px-4 py-4 sm:px-6">
                             <div class="min-w-0 flex-1 md:grid md:grid-cols-2 md:gap-4">
                                 <div class="text-sm leading-5 font-medium text-gray-600 truncate" v-text="item"></div>
                             </div>
@@ -53,28 +51,28 @@
 </template>
 
 <script>
-    import VueContext from 'vue-context';
-    import 'vue-context/src/sass/vue-context.scss';
+import VueContext from 'vue-context';
+import 'vue-context/src/sass/vue-context.scss';
 
-    export default {
-        components: { VueContext },
+export default {
+    components: { VueContext },
 
-        data() {
-            return {
-                items: [
-                    'Cras justo odio',
-                    'Dapibus ac facilisis in',
-                    'Morbi leo risus',
-                    'Porta ac consectetur ac',
-                    'Vestibulum at eros'
-                ]
-            };
+    data() {
+        return {
+            items: [
+                'Cras justo odio',
+                'Dapibus ac facilisis in',
+                'Morbi leo risus',
+                'Porta ac consectetur ac',
+                'Vestibulum at eros',
+            ]
+        };
+    },
+
+    methods: {
+        alertText(text) {
+            alert(`You clicked: ${text}`);
         },
-
-        methods: {
-            alertText(text) {
-                alert(`You clicked: ${text}`);
-            }
-        }
-    };
+    },
+};
 </script>
