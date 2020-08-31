@@ -16,19 +16,17 @@ otherwise the context menu will not function properly.
             Right click on me
         </p>
 
-        <vue-context ref="menu">
-            <template slot-scope="child">
-                <li>
-                    <a @click.prevent="onClick($event.target.innerText, child.data)">
-                        Option 1
-                    </a>
-                </li>
-                <li>
-                    <a @click.prevent="onClick($event.target.innerText, child.data)">
-                        Option 2
-                    </a>
-                </li>
-            </template>
+        <vue-context ref="menu" v-slot="{ data }">
+            <li>
+                <a @click.prevent="onClick($event.target.innerText, data)">
+                    Option 1
+                </a>
+            </li>
+            <li v-if="data">
+                <a @click.prevent="onClick($event.target.innerText, data)">
+                    Option 2 - {{ data.foo }}
+                </a>
+            </li>
         </vue-context>
     </div>
 </template>
@@ -41,19 +39,19 @@ otherwise the context menu will not function properly.
         components: { VueContext },
 
         methods: {
-            onClick (text, data) {
+            onClick(text, data) {
                 alert(`You clicked "${text}"!`);
                 console.log(data);
                 // => { foo: 'bar' }
-            }
-        }
+            },
+        },
     };
 </script>
 ```
 
 ## Props
 
-There are six props available on the context menu:
+There are many props available on the context menu. Some of them include:
 
 - `closeOnClick`
 - `closeOnScroll`
@@ -98,7 +96,7 @@ can be used and the accessiblity attributes can be added to each menu item.
     export default {
         components: { VueContext },
 
-        data () {
+        data() {
             return {
                 // when set to true, the context  menu will close when clicked on
                 closeOnClick: true,
@@ -116,12 +114,14 @@ can be used and the accessiblity attributes can be added to each menu item.
                 tag: 'ul',
 
                 // This is how the component is able to find each menu item. Useful if you use non-recommended markup
-                itemSelector: ['.custom-item-class']
+                itemSelector: ['.custom-item-class'],
             };
-        }
+        },
     };
 </script>
 ```
+
+See [the api](/docs/vue-context/v6/api/vue-context) for more information on props.
 
 ## Events
 
@@ -165,15 +165,15 @@ The `open` event is emitted when the context menu is shown and receives the foll
         components: { VueContext },
 
         methods: {
-            onClose () {
+            onClose() {
                 console.log('The context menu was closed');
             },
 
-            onOpen (event, data, top, left) {
+            onOpen(event, data, top, left) {
                 console.log('The context menu was opened');
                 console.log(event, data, top, left);
-            }
-        }
+            },
+        },
     };
 </script>
 ```
@@ -249,7 +249,7 @@ There is no limit on how far you can nest the menus, the only requirement is to 
     import 'vue-context/src/sass/vue-context.scss'; // Alternatively import into a stylesheet instead
 
     export default {
-        components: { VueContext }
+        components: { VueContext },
     };
 </script>
 ```
