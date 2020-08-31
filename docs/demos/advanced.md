@@ -225,7 +225,7 @@ export default {
 <template>
     <div>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <ul>
+            <ul class="demo">
                 <li>
                     <a href="#"
                        class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
@@ -304,4 +304,4 @@ export default {
 
 [Demo Source](https://github.com/rawilk/vue-context/blob/master/docs-build/js/advanced/nested-menus.vue)
 
-<script src="../scripts/vue-context-advanced-demos.1598840380789.js"></script>
+<script src="../scripts/vue-context-advanced-demos.1598840580885.js"></script>

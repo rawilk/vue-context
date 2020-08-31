@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <ul>
+            <ul class="demo">
                 <li>
                     <a href="#"
                        class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
