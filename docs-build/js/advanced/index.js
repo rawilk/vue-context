@@ -20,4 +20,4 @@ new Vue({
     components: {
         NestedMenus,
     },
-}).$mount('#nested-menus');
+}).$mount('#nested-app');

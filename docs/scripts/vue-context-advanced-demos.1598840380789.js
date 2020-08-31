@@ -275,7 +275,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   components: {
     NestedMenus: _nested_menus__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
-}).$mount('#nested-menus');
+}).$mount('#nested-app');
 
 /***/ }),
 

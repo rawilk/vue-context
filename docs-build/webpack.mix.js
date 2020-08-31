@@ -1,4 +1,8 @@
 const mix = require('laravel-mix');
+const fs = require('fs');
+
+// Cleanup the old scripts, since we'll be re-hashing them.
+fs.rmdirSync(__dirname + '/../docs/scripts', { recursive: true });
 
 mix
     .js('js/index.js', 'dist/vue-context-demos.js')
