@@ -47,44 +47,44 @@
 </template>
 
 <script>
-    import VueContext from 'vue-context';
-    import 'vue-context/src/sass/vue-context.scss';
+import VueContext from 'vue-context';
+import 'vue-context/src/sass/vue-context.scss';
 
-    const items = [
-        'Cras justo odio',
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Porta ac consectetur ac',
-        'Vestibulum at eros'
-    ];
+const items = [
+    'Cras justo odio',
+    'Dapibus ac facilisis in',
+    'Morbi leo risus',
+    'Porta ac consectetur ac',
+    'Vestibulum at eros'
+];
 
-    export default {
-        components: { VueContext },
+export default {
+    components: { VueContext },
 
-        computed: {
-            showReset () {
-                return this.items.length < items.length;
-            },
+    computed: {
+        showReset () {
+            return this.items.length < items.length;
+        },
+    },
+
+    data () {
+        return {
+            items: [...items]
+        };
+    },
+
+    methods: {
+        alertName(name) {
+            alert(`You clicked on "${name}"!`);
         },
 
-        data () {
-            return {
-                items: [...items]
-            };
+        remove(index) {
+            this.$delete(this.items, index);
         },
 
-        methods: {
-            alertName(name) {
-                alert(`You clicked on "${name}"!`);
-            },
-
-            remove(index) {
-                this.$delete(this.items, index);
-            },
-
-            reset() {
-                this.items = [...items];
-            },
+        reset() {
+            this.items = [...items];
         },
-    };
+    },
+};
 </script>
