@@ -82,9 +82,9 @@ Next add an element to the page that will trigger the context menu to appear, an
 
 ## Documentation/Demo
 
-For full documentation and demos, go here: https://vue-context.com/docs.
+For full documentation and demos, go here: https://randallwilk.dev/docs/vue-context.
 
-If you would like to contribute to the documentation, the repo can be found here: https://github.com/rawilk/vue-context-docs.
+If you would like to contribute to the documentation, you can edit the docs found here: https://github.com/rawilk/vue-context/docs
 
 ## Contributors
 
