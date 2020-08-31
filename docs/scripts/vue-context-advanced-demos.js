@@ -405,8 +405,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2502,46 +2500,43 @@ var render = function() {
       _vm._v(" "),
       _c("vue-context", {
         ref: "menu",
-        scopedSlots: _vm._u(
-          [
-            {
-              key: "default",
-              fn: function(child) {
-                return child.data
-                  ? [
-                      _c("li", [
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "#" },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.toggle(child.data)
-                              }
+        scopedSlots: _vm._u([
+          {
+            key: "default",
+            fn: function(ref) {
+              var color = ref.data
+              return [
+                color
+                  ? _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.toggle(color)
                             }
-                          },
-                          [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(
-                                  _vm.hasColor(child.data.hex)
-                                    ? "Remove Color"
-                                    : "Select Color"
-                                ) +
-                                "\n                "
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  : undefined
-              }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(
+                                _vm.hasColor(color.hex)
+                                  ? "Remove Color"
+                                  : "Select Color"
+                              ) +
+                              "\n            "
+                          )
+                        ]
+                      )
+                    ])
+                  : _vm._e()
+              ]
             }
-          ],
-          null,
-          true
-        )
+          }
+        ])
       })
     ],
     1

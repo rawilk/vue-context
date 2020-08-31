@@ -17,58 +17,56 @@
         </h5>
         <code class="mb-3">{{ selectedColors }}</code>
 
-        <vue-context ref="menu">
-            <template slot-scope="child" v-if="child.data">
-                <li>
-                    <a href="#" @click.prevent="toggle(child.data)">
-                        {{ hasColor(child.data.hex) ? 'Remove Color' : 'Select Color' }}
-                    </a>
-                </li>
-            </template>
+        <vue-context ref="menu" v-slot="{ data: color }">
+            <li v-if="color">
+                <a href="#" @click.prevent="toggle(color)">
+                    {{ hasColor(color.hex) ? 'Remove Color' : 'Select Color' }}
+                </a>
+            </li>
         </vue-context>
     </div>
 </template>
 
 <script>
-    import VueContext from 'vue-context';
-    import 'vue-context/src/sass/vue-context.scss';
+import VueContext from 'vue-context';
+import 'vue-context/src/sass/vue-context.scss';
 
-    export default {
-        components: { VueContext },
+export default {
+    components: { VueContext },
 
-        data () {
-            return {
-                colors: [
-                    { name: 'red', hex: '#f44336' },
-                    { name: 'blue', hex: '#2196F3' },
-                    { name: 'cyan', hex: '#00BCD4' },
-                    { name: 'green', hex: '#4CAF50' },
-                    { name: 'orange', hex: '#FF9800' }
-                ],
-                selectedColors: []
-            };
+    data() {
+        return {
+            colors: [
+                { name: 'red', hex: '#f44336' },
+                { name: 'blue', hex: '#2196F3' },
+                { name: 'cyan', hex: '#00BCD4' },
+                { name: 'green', hex: '#4CAF50' },
+                { name: 'orange', hex: '#FF9800' },
+            ],
+            selectedColors: [],
+        };
+    },
+
+    methods: {
+        colorIndex(hex) {
+            return this.selectedColors.findIndex(color => color.hex === hex);
         },
 
-        methods: {
-            colorIndex (hex) {
-                return this.selectedColors.findIndex(color => color.hex === hex);
-            },
+        hasColor(hex) {
+            return this.colorIndex(hex) > -1;
+        },
 
-            hasColor (hex) {
-                return this.colorIndex(hex) > -1;
-            },
+        toggle(color) {
+            const index = this.colorIndex(color.hex);
 
-            toggle (color) {
-                const index = this.colorIndex(color.hex);
-
-                if (index > -1) {
-                    this.$delete(this.selectedColors, index);
-                } else {
-                    this.selectedColors.push(color);
-                }
+            if (index > -1) {
+                this.$delete(this.selectedColors, index);
+            } else {
+                this.selectedColors.push(color);
             }
-        }
-    };
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -62,12 +62,12 @@ export default {
     components: { VueContext },
 
     computed: {
-        showReset () {
+        showReset() {
             return this.items.length < items.length;
         },
     },
 
-    data () {
+    data() {
         return {
             items: [...items]
         };
