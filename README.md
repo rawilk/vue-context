@@ -1,3 +1,9 @@
+# Attention:
+
+I'm looking for someone or some people to help maintain this project. In the last few months, I've moved away from using Vue in favor of a Laravel Livewire/AlpineJS combination. Because of that, it doesn't really make sense for me to maintain this library anymore since I'd rather put the time into stuff that is useful for that stack. 
+
+I'd rather not abandon the package entirely, so any help maintaining it would be greatly appreciated! If interested, please send me an email at randall@randallwilk.dev. 
+
 # vue-context
 
 [![npm version](https://img.shields.io/npm/v/vue-context.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-context)
