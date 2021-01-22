@@ -8,7 +8,7 @@
                        :class="{ 'border-t border-gray-200': index > 0 }"
                        v-for="(item, index) in items"
                        :key="index"
-                       v-on:contextmenu.prevent="$refs.menu.open"
+                       @contextmenu.prevent="$refs.menu.open"
                     >
                         <div class="flex items-center px-4 py-4 sm:px-6">
                             <div class="min-w-0 flex-1 md:grid md:grid-cols-2 md:gap-4">
@@ -38,8 +38,6 @@
 <script>
 import VueContext from 'vue-context';
 import 'vue-context/src/sass/vue-context.scss';
-
-console.log('wip...');
 
 export default {
     components: { VueContext },
