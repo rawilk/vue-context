@@ -1,8 +1,8 @@
 # Attention:
 
-I'm looking for someone or some people to help maintain this project. In the last few months, I've moved away from using Vue in favor of a Laravel Livewire/AlpineJS combination. Because of that, it doesn't really make sense for me to maintain this library anymore since I'd rather put the time into stuff that is useful for that stack. 
-
-I'd rather not abandon the package entirely, so any help maintaining it would be greatly appreciated! If interested, please send me an email at randall@randallwilk.dev. 
+I no longer have the ability or interest in maintaining this package since I am not using Vue in any of my projects
+anymore, so I am abandoning `vue-context`. If your project depends on vue-context, please feel free to fork and maintain
+the package yourself, or use an [alternative context menu package](#alternatives).
 
 # vue-context
 
@@ -86,9 +86,9 @@ Next add an element to the page that will trigger the context menu to appear, an
 @import '~vue-context/src/sass/vue-context';
 ```
 
-## Documentation/Demo
+## Documentation
 
-For full documentation and demos, go here: https://randallwilk.dev/docs/vue-context.
+For full documentation, go here: https://randallwilk.dev/docs/vue-context.
 
 If you would like to contribute to the documentation, you can edit the docs found here: https://github.com/rawilk/vue-context/tree/master/docs
 
@@ -100,6 +100,13 @@ This project exists thanks to all the people who contribute. [[Contribute]](CONT
 - [wol-soft](https://github.com/wol-soft)
 - [nachodd](https://github.com/nachodd)
 - [Nberezhnoy](https://github.com/Nberezhnoy)
+
+## Alternatives
+
+- [vue-context-menu](https://github.com/vmaimone/vue-context-menu)
+- [@overcoder/vue-context-menu](https://github.com/MicroDroid/vue-context-menu)
+
+See [awesome-vue](https://github.com/vuejs/awesome-vue#context-menu) for other alternatives.
 
 ## License
 
