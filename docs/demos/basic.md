@@ -79,4 +79,4 @@ export default {
 
 [Demo Source](https://github.com/rawilk/vue-context/blob/master/docs-build/js/basic/basic-usage.vue)
 
-<script src="../scripts/vue-context-basic-demos.1611329964824.js"></script>
+<script src="../scripts/vue-context-basic-demos.1611330204010.js"></script>
