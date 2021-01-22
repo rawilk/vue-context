@@ -70,6 +70,5 @@ to prevent the default behavior. In this example, the context menu has a ref of 
 referring to. When each item is clicked on, the text of the item is sent to the `onClick` method on the Vue instance,
 which is then shown via an alert.
 
-{.tip}
-> The context menu defaults to a `<ul>` tag. For best results, make each menu item an `<a>` tag wrapped inside
+> {tip} The context menu defaults to a `<ul>` tag. For best results, make each menu item an `<a>` tag wrapped inside
 > of an `<li>` tag.

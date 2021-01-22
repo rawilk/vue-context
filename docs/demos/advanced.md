@@ -5,8 +5,7 @@ sort: 2
 
 ## Demo 1
 
-{.tip}
-> Right click on each item to see a more customized context menu appear for each item.
+> {tip} Right click on each item to see a more customized context menu appear for each item.
 
 <div id="advanced-1-app">
     <div style="margin-bottom: 1rem;">
@@ -111,8 +110,7 @@ export default {
 
 ## Demo 2
 
-{.tip}
-> Right click on each of the colors to have a context menu appear to allow you do add or
+> {tip} Right click on each of the colors to have a context menu appear to allow you do add or
 > remove the color from the array of selected colors.
 
 <div id="advanced-2-app">

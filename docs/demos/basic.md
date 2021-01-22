@@ -3,15 +3,13 @@ title: Basic Demo
 sort: 1
 ---
 
-{.tip}
-> Right click on each item to open the context menu.
+> {tip} Right click on each item to open the context menu.
 
 <div id="basic-app" style="margin-bottom: 1rem;">
     <basic-usage></basic-usage>
 </div>
 
-{.tip}
-> Try using the up and down arrows as well to navigate the menu.
+> {tip} Try using the up and down arrows as well to navigate the menu.
 
 ```html
 <template>
