@@ -163,4 +163,4 @@ export default {
 
 [Demo Source](https://github.com/rawilk/vue-context/blob/master/docs-build/js/props/close-on-scroll.vue)
 
-<script src="../scripts/vue-context-props-demos.1598841649513.js"></script>
+<script src="../scripts/vue-context-props-demos.1611329867428.js"></script>
