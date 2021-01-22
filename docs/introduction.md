@@ -3,6 +3,10 @@ title: Introduction
 sort: 1
 ---
 
+> {note} I have abandoned this package since I no longer have the time or interest in maintaining it.
+> If your project depends on vue-context, feel free to fork and maintain your own version of it, or 
+> consider using an [alternative vue context menu package](https://github.com/vuejs/awesome-vue#context-menu).
+
 ## Introduction
 
 `vue-context` provides a simple yet flexible context menu for Vue. It is styled for the standard `<ul>` tag, but any menu
