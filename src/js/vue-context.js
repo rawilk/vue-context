@@ -99,12 +99,14 @@ export default {
         },
 
         addHoverEventListener(element) {
-            element.querySelectorAll('.v-context__sub').forEach(
-                subMenuNode => {
-                    eventOn(subMenuNode, 'mouseenter', this.openSubMenu);
-                    eventOn(subMenuNode, 'mouseleave', this.closeSubMenu);
-                }
-            );
+            this.$nextTick(() => {
+                element.querySelectorAll('.v-context__sub').forEach(
+                    subMenuNode => {
+                        eventOn(subMenuNode, 'mouseenter', this.openSubMenu);
+                        eventOn(subMenuNode, 'mouseleave', this.closeSubMenu);
+                    }
+                );
+            });
         },
 
         close() {
