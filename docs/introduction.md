@@ -15,7 +15,7 @@ styles applied to it, but they can be easily overridden by your own styles.
 
 The menu disappears when you expect by utilizing `vue-clickaway` and it also optionally disappears when clicked on.
 
-![vue-context screenshot](../images/screenshot.jpg)
+![vue-context screenshot](/docs/vue-context/v6/images/screenshot.jpg)
 
 By default, the menu is set up to use a `<ul>` tag for the menu, which is given the attribute `role="menu"` automatically.
 The component will also automatically apply the attribute `role="menuitem"` to each menu item when the context menu is opened.
